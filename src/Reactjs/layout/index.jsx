@@ -53,7 +53,7 @@ const MenuNav=React.createClass({
     render(){
         return(
             <div className="show-for-medium">
-                <ul className="nav">
+                <ul className="nav" style={{backgroundAttachment:'fixed'}}>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/Informacion">Informacion</Link></li>
                     <li><Link to="/Preguntas">Preguntas</Link></li>

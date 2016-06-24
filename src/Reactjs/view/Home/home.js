@@ -123,22 +123,25 @@ const ViewHome=React.createClass({
                 </div>
                 <div className="show-for-medium">
                     <section id="SectionVideoDesktop">
-                        <div className="row">
-                            <div className="medium-5 large-6 columns" style={{height:'314px'}}>
-                                <div style={{padding:'20px'}}>
-                                    <h3 style={{color:'#f95e1b'}}>Webservice Production</h3>
-                                    <p style={{fontSize:'40px'}}>Porque desarrollamo lo que piensas.</p>
-                                </div>
-
-                            </div>
-                            <div className="medium-7 large-6 columns" >
-                                <div className="text-center">
+                        <div className="imgfondodesktop">
+                            <div className="row">
+                                <div className="medium-5 large-6 columns" style={{height:'314px'}}>
                                     <div style={{padding:'20px'}}>
-                                        <PruebaModal></PruebaModal>
+                                        <h3 style={{color:'#f95e1b'}}>Webservice Production</h3>
+                                        <p style={{fontSize:'30px'}}>Porque desarrollamo lo que piensas.</p>
+                                    </div>
+
+                                </div>
+                                <div className="medium-7 large-6 columns" >
+                                    <div className="text-center">
+                                        <div className="row" style={{paddingTop:'20px',paddingBottom:'20px'}}>
+                                            <PruebaModal></PruebaModal>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </section>
                     <section id="sectionSlider">
                         <Slider></Slider>
