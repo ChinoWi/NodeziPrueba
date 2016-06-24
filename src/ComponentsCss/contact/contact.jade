@@ -1,0 +1,30 @@
+extends ../layout.jade
+
+block content
+	main(class="view-contact roww centerr  middlee")
+		section(class="loading col-4 centerr")
+			canvas(id="canvas" width="300" height="300" class="content-loading")
+			span(id="porcentaje" class="porcentaje") 0%
+		section(class="contact")
+			div(class="col-10")
+				form(action="" method="post" class="form")
+					input(type="text" name="name" id="name" placeholder="Nombre")
+					span(class="name" id="nameTitle")
+					input(type="text" name="email" id="email" placeholder="Email")
+					span(class="email" id="emailTitle")
+					textarea(name="asunto", cols="30", rows="10" id="asunto" placeholder="Escribe tu Consulta")
+					span(class="asunto" id="asuntoTitle")
+					button(type="button" id="btnEnviar") Enviar
+
+
+
+
+
+
+
+
+
+
+
+
+
