@@ -1,5 +1,6 @@
 import React from 'react';
-import Nodezi from './prueba'
+import Nodezi from './prueba';
+import $ from 'jquery';
 
 var style={
   contact:{
