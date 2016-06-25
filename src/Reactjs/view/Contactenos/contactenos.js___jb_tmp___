@@ -37,34 +37,25 @@ const ViewContactenos=React.createClass({
 
     onNombreChange(e){
         var valorNombre=e.target.value;
-        var refNombre=this.refs.nombre;
+        var refNombre=this.refs.nombre,
+            value=parseInt(refNombre.value, 10) || 0;
 
-        if(this.validateNombre(valorNombre) && valorNombre.trim().length>3){
-            this.setState({
-                nombre:true,
-                mensajeNombre:'Usuario Correcto'
-            })
-        }
-        else{
-            this.setState({
-                nombre:false,
-                mensajeNombre:'Solo letras.'
-            })
+        if(this.validateNombre(valorNombre)){
+            if(this.state.valor==0 && valorNombre!='' && valorNombre.trim().length!=0 ){
+                value=32;
+                this.setState({valor:value,nombre:true})
+            }else if(this.state.valor==33 && valorNombre!='' && valorNombre.trim().length!=0){
+                value=65;
+                this.setState({valor:value,nombre:true})
+            }else if(this.state.valor==35 && valorNombre!='' && valorNombre.trim().length!=0){
+                value=67;
+                this.setState({valor:value,nombre:true})
+            }else if(this.state.valor==68 && valorNombre!='' && valorNombre.trim().length!=0){
+                value=100;
+                this.setState({valor:value,nombre:true})
+            }
         }
 
-        if(this.state.valor==0 && valorNombre!='' && valorNombre.trim().length!=0 && this.state.nombre==true){
-            value=32;
-            this.setState({valor:value})
-        }else if(this.state.valor==33 && valorNombre!='' && valorNombre.trim().length!=0&& this.state.nombre==true){
-            value=65;
-            this.setState({valor:value})
-        }else if(this.state.valor==35 && valorNombre!='' && valorNombre.trim().length!=0&& this.state.nombre==true){
-            value=67;
-            this.setState({valor:value})
-        }else if(this.state.valor==68 && valorNombre!='' && valorNombre.trim().length!=0&& this.state.nombre==true){
-            value=100;
-            this.setState({valor:value})
-        }
         if(!this.state.nombre ){
             value=value-32;
         }
@@ -82,7 +73,8 @@ const ViewContactenos=React.createClass({
 
     onEmailChange(e){
         var valorEmail=e.target.value;
-        var refEmail=this.refs.nombre;
+        var refEmail=this.refs.nombre,
+            value=parseInt(refEmail.value, 10) || 0;
 
         if(this.validateEmail(valorEmail)){
             this.setState({
@@ -125,39 +117,34 @@ const ViewContactenos=React.createClass({
     },
     onTextareaChange(e){
         var valorTextarea=e.target.value;
-        var refvalorTextarea=this.refs.nombre;
+        var refvalorTextarea=this.refs.nombre,
+            values=parseInt(refvalorTextarea.value, 20) || 0;
 
         if(valorTextarea.trim().length>=5){
             this.setState({
-                textarea:1
-            })
-        }else{
-            this.setState({
-                textarea:2
-            })
-        }
-
-        if(valorTextarea.trim().length>=5){
-              if(this.state.valor==0  ){
-                value=35
-                this.setState({valor:value,textarea:true})
-            }else if(this.state.valor==32){
-                value=67
-                this.setState({valor:value,textarea:true})
-            }else if(this.state.valor==33){
-                value=68
-                this.setState({valor:value,textarea:true})
-            }else if(this.state.valor==65){
-                value=100
-                this.setState({valor:value,textarea:true})
-            }
+               textarea:true
+            });
         }else{
             this.setState({
                 textarea:false
             })
         }
 
-        if(!this.state.textarea){
+        if(this.state.valor==0 && valorTextarea!='' && valorTextarea.trim().length!=0 &&this.state.textarea==true){
+            value=35;
+            this.setState({valor:value})
+        }else if(this.state.valor==32 && valorTextarea!='' && valorTextarea.trim().length!=0 &&this.state.textarea==true){
+            value=67;
+            this.setState({valor:value})
+        }else if(this.state.valor==33 && valorTextarea!='' && valorTextarea.trim().length!=0 &&this.state.textarea==true){
+            value=68;
+            this.setState({valor:value})
+        }else if(this.state.valor==65 && valorTextarea!='' && valorTextarea.trim().length!=0 &&this.state.textarea==true){
+            value=100;
+            this.setState({valor:value});
+        }
+
+        if(valorTextarea=='' || this.state.textarea==false){
             value=value-35;
         }
 
