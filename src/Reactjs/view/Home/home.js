@@ -143,6 +143,9 @@ const ViewHome=React.createClass({
                         </div>
 
                     </section>
+                    <div className="text-center">
+                        <h3>Welcome NOdezi</h3>
+                    </div>
                     <section id="sectionSlider">
                         <Slider></Slider>
                     </section>
