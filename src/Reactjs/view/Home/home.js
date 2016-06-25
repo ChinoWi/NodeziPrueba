@@ -121,31 +121,29 @@ const ViewHome=React.createClass({
                     </section>
 
                 </div>
-                <div className="show-for-medium">
-                    <section id="SectionVideoDesktop">
-                        <div className="imgfondodesktop">
-                            <div className="row">
-                                <div className="medium-5 large-6 columns" style={{height:'314px'}}>
-                                    <div style={{padding:'20px'}}>
-                                        <h3 style={{color:'#f95e1b'}}>Webservice Production</h3>
-                                        <p style={{fontSize:'30px'}}>Porque desarrollamo lo que piensas.</p>
-                                    </div>
 
+                <div className="show-for-medium">
+                    <section className="sectionVideoDesktop">
+                        <div className="imagenfondodekstop" style={{height:'500px'}}>
+                            <div className="row" style={{margin:'60px 10px 0 10px'}}>
+                                <div className="medium-6 large-6 columns">
+
+                                        <h3 style={{color:'white'}}>Desarrollo de páginas web y sistemas a medida, implementando Seguridad Hacking</h3>
+                                        <p style={{fontSize:'15px'}}>Confie en nosotros.</p>
+                                        <Link to="/Informacion" className="secondary button">Conocenos mas</Link>
                                 </div>
-                                <div className="medium-7 large-6 columns" >
-                                    <div className="text-center">
-                                        <div className="row" style={{paddingTop:'20px',paddingBottom:'20px'}}>
-                                            <PruebaModal></PruebaModal>
-                                        </div>
-                                    </div>
+                                <div className="medium-6 large-6 columns">
+                                    <PruebaModal></PruebaModal>
                                 </div>
                             </div>
                         </div>
-
                     </section>
-                    <div className="text-center">
-                        <h3>Welcome NOdezi</h3>
-                    </div>
+                    <section style={{background:'#00BCD4'}}>
+                        <div className="text-center" style={{padding:'20px'}}>
+                            Cotiza tu Proyecto
+                            <Link to="/Informacion" className="secondary button" >Cotiza</Link>
+                        </div>
+                    </section>
                     <section id="sectionSlider">
                         <Slider></Slider>
                     </section>

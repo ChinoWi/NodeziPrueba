@@ -18,14 +18,14 @@ const PruebaModal=React.createClass({
     },
     render() {
         return (
-            <div className="row">
+            <div className="row" style={{padding:'15px'}}>
                 <div id="contentModal">
                     <div className="text-center">
-                        <img className="imgVideoModal" src="asset/images/video_portada.jpg" onClick={() => this.showModal()}alt=""/>
+                        <img className="imgVideoModal" src="asset/images/video_portada.jpg" style={{height:'280px'}} onClick={() => this.showModal()}alt=""/>
                     </div>
                 </div>
                 <Modal isShowModal={this.state.isModalOpen} isHideModal={() => this.hideModal()}>
-                    <div className="text-right" style={{marginRight:'8px',}}>
+                    <div className="text-right" style={{marginRight:'8px'}}>
                         <a className="icon-closeModal" onClick={() => this.hideModal()} >X</a>
                     </div>
                     <div class="flex-video" style={{marginLeft:'30px',marginRight:'30px',marginBottom:'20px'}}>
