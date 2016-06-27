@@ -8,7 +8,7 @@ export default class CircularProgress extends React.Component {
         this.state = {
         };
     }
-
+    
     render() {
         const radius = this.props.radius - this.props.strokeWidth / 2;
         const width = this.props.radius * 2;
