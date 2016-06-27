@@ -8,18 +8,19 @@ import App from './layout/index.jsx';
 import ViewHome from './view/Home/home'
 import ViewInformacion from './view/Informacion/informacion';
 import ViewPreguntas from './view/Preguntas/preguntas';
-import TodoApp1 from './view/Contactenos/contactenos'
+import Inbox from './view/Contactenos/contactenos'
 import PageNotFound from './view/Error/404';
 
 ReactDOM.render((
     <Router history={browserHistory}>
         <Route path="/" component={App} >
             <IndexRoute component={ViewHome}></IndexRoute>
-            <Router path="/" component={ViewHome}></Router>
-            <Router path="Informacion" component={ViewInformacion}></Router>
-            <Router path="Contactenos" component={TodoApp1}></Router>
-            <Router path="Preguntas" component={ViewPreguntas}></Router>
-            <Router path="Blog"></Router>
+            <Route path="/" component={ViewHome}></Route>
+            <Route path="Informacion" component={ViewInformacion}></Route>
+            <Route path="Contactenos" component={Inbox}>
+                <Route path="Nuevo"></Route>
+            </Route>
+            <Route path="Preguntas" component={ViewPreguntas}></Route>
         </Route>
         <Route path="*" component={PageNotFound} />
     </Router>

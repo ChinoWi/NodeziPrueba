@@ -29465,158 +29465,350 @@
 
 	var ViewContactenos = _react2.default.createClass({
 	    displayName: 'ViewContactenos',
+
+	    mixins: [ReactFireMixin],
 	    getInitialState: function getInitialState() {
 	        return {
-	            percentage: 0,
 	            valor: 0,
-	            email: false,
-	            mensajeEmail: '',
-	            nombre: false,
-	            mensajeNombre: '',
-	            textarea: false,
-	            mensajeTextarea: ''
+	            mensajeNombre: 'Min 4 caracteres, letras',
+	            mensajeEmail: 'Ingrese email valido',
+	            mensajeTextarea: 'Min 6 caracteres',
+	            mostrarMensajeDisplay: 'none',
+
+	            items: [],
+	            textNombreFirebase: '',
+	            textEmailFirebase: '',
+	            textTextareaFirebase: ''
 	        };
+
+	        this.onNombreChange = this.onNombreChange.bind(this);
 	    },
-
-
 	    validateEmail: function validateEmail(value) {
 	        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	        return re.test(value);
 	    },
 	    validateNombre: function validateNombre(value) {
-	        var re = /^[a-z][a-z]*/;
+	        var re = /^[A-Za-z\_\-\.\s\xF1\xD1]+$/;
 	        return re.test(value);
 	    },
-
 	    onNombreChange: function onNombreChange(e) {
 	        var valorNombre = e.target.value;
-	        var refNombre = this.refs.nombre;
-
-	        if (this.validateNombre(valorNombre)) {
+	        this.setState({
+	            textNombreFirebase: valorNombre
+	        });
+	        if (this.validateNombre(valorNombre) && valorNombre.length >= 3 && valorNombre != '') {
 	            this.setState({
-	                nombre: true,
-	                mensajeNombre: 'Nombre Correo'
+	                mostrarMensajeDisplay: 'none'
 	            });
-	        } else {
-	            this.setState({
-	                nombre: false,
-	                mensajeNombre: 'Ingrese solo letras',
-	                valor: value
-	            });
+	            if (this.state.valor == 0) {
+	                value = 32;
+	                this.setState({ valor: value, mensajeNombre: 'Correct' });
+	            }if (this.state.valor == 33) {
+	                value = 65;
+	                this.setState({ valor: value, mensajeNombre: 'Correct' });
+	            }
+	            if (this.state.valor == 35) {
+	                value = 67;
+	                this.setState({ valor: value, mensajeNombre: 'Correct' });
+	            }
+	            if (this.state.valor == 68) {
+	                value = 100;
+	                this.setState({ valor: value, mensajeNombre: 'Correct' });
+	            }
+	        }if (valorNombre.length <= 3) {
+	            if (this.state.valor == 33) value = 33;else if (this.state.valor == 35) value = 35;else if (this.state.valor == 68) value = 68;else {
+	                value = value - 32;
+	                this.setState({
+	                    mensajeNombre: 'Min 4 caracteres, letras'
+	                });
+	            }
 	        }
 
-	        if (this.state.valor == 0 && valorNombre != '' && valorNombre.trim().length != 0) {
-	            value = 32;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 33 && valorNombre != '' && valorNombre.trim().length != 0) {
-	            value = 65;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 35 && valorNombre != '' && valorNombre.trim().length != 0) {
-	            value = 67;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 68 && valorNombre != '' && valorNombre.trim().length != 0) {
+	        if (value < 0) {
+	            value = 0;
+	        }
+	        if (value > 100) {
 	            value = 100;
-	            this.setState({ valor: value });
 	        }
-	        if (valorNombre.trim().length == 0) value = value - 32;
 
 	        this.setState({ valor: value });
 	    },
 	    onEmailChange: function onEmailChange(e) {
 	        var valorEmail = e.target.value;
-	        var refEmail = this.refs.nombre;
+	        this.setState({
+	            textEmailFirebase: valorEmail
+	        });
 
 	        if (this.validateEmail(valorEmail)) {
 	            this.setState({
-	                mensajeEmail: 'Email correcto',
-	                email: true
+	                mostrarMensajeDisplay: 'none'
 	            });
+	            if (this.state.valor == 0) {
+	                value = 33;
+	                this.setState({ valor: value, mensajeEmail: 'Correct' });
+	            }if (this.state.valor == 32) {
+	                value = 65;
+	                this.setState({ valor: value, mensajeEmail: 'Correct' });
+	            }
+	            if (this.state.valor == 35) {
+	                value = 68;
+	                this.setState({ valor: value, mensajeEmail: 'Correct' });
+	            }
+	            if (this.state.valor == 67) {
+	                value = 100;
+	                this.setState({ valor: value, mensajeEmail: 'Correct' });
+	            }
 	        } else {
-	            this.setState({
-	                mensajeEmail: 'Ingrese Email correcto!',
-	                email: false
-	            });
+	            if (this.state.valor == 32) value = 32;else if (this.state.valor == 35) value = 35;else if (this.state.valor == 67) value = 67;else {
+	                value = value - 33;
+	                this.setState({
+	                    mensajeEmail: 'Ingrese email valido'
+	                });
+	            }
 	        }
 
-	        if (this.state.valor == 0 && valorEmail != '' && valorEmail.trim().length != 0) {
-	            value = 33;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 32 && valorEmail != '' && valorEmail.trim().length != 0) {
-	            value = 65;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 35 && valorEmail != '' && valorEmail.trim().length != 0) {
-	            value = 68;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 67 && valorEmail != '' && valorEmail.trim().length != 0) {
-	            value = 100;
-	            this.setState({ valor: value });
+	        if (value < 0) {
+	            value = 0;
 	        }
-	        if (valorEmail.trim().length == 0 && valorEmail == '') value = value - 33;
+	        if (value > 100) {
+	            value = 100;
+	        }
 
 	        this.setState({ valor: value });
 	    },
 	    onTextareaChange: function onTextareaChange(e) {
 	        var valorTextarea = e.target.value;
-	        var refvalorTextarea = this.refs.nombre;
+	        this.setState({
+	            textTextareaFirebase: valorTextarea
+	        });
 
-	        if (this.state.valor == 0 && valorTextarea != '' && valorTextarea.trim().length != 0) {
-	            value = 35;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 32 && valorTextarea != '' && valorTextarea.trim().length != 0) {
-	            value = 67;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 33 && valorTextarea != '' && valorTextarea.trim().length != 0) {
-	            value = 68;
-	            this.setState({ valor: value });
-	        } else if (this.state.valor == 65 && valorTextarea != '' && valorTextarea.trim().length != 0) {
-	            value = 100;
-	            this.setState({ valor: value });
+	        if (valorTextarea.length >= 5 && valorTextarea != '') {
+	            this.setState({
+	                mostrarMensajeDisplay: 'none'
+	            });
+	            if (this.state.valor == 0) {
+	                value = 35;
+	                this.setState({ valor: value, mensajeTextarea: 'Correct' });
+	            }if (this.state.valor == 32) {
+	                value = 67;
+	                this.setState({ valor: value, mensajeTextarea: 'Correct' });
+	            }
+	            if (this.state.valor == 33) {
+	                value = 68;
+	                this.setState({ valor: value, mensajeTextarea: 'Correct' });
+	            }
+	            if (this.state.valor == 65) {
+	                value = 100;
+	                this.setState({ valor: value, mensajeTextarea: 'Correct' });
+	            }
+	        }if (valorTextarea.length <= 5) {
+	            if (this.state.valor == 32) value = 32;else if (this.state.valor == 33) value = 33;else if (this.state.valor == 65) value = 65;else {
+	                value = value - 35;
+	                this.setState({
+	                    mensajeTextarea: 'Min 6 caracteres'
+	                });
+	            }
 	        }
 
-	        if (valorTextarea.trim().length == 0) value = value - 35;
+	        if (value < 0) {
+	            value = 0;
+	        }
+	        if (value > 100) {
+	            value = 100;
+	        }
 
 	        this.setState({ valor: value });
+	    },
+
+
+	    componentWillMount: function componentWillMount() {
+	        var firebaseRef = firebase.database().ref('todoApp/items');
+	        this.bindAsArray(firebaseRef.limitToLast(40), 'items');
+	    },
+
+	    handleSubmit: function handleSubmit(e) {
+	        e.preventDefault();
+	        if (this.state.valor == 100) {
+	            this.firebaseRefs['items'].push({
+	                Nombres: this.state.textNombreFirebase,
+	                Email: this.state.textEmailFirebase,
+	                Mensaje: this.state.textTextareaFirebase
+	            });
+	            console.log("se activo nombre");
+	        } else this.setState({
+	            mensajeError: 'Ingrese correcamente los campos.',
+	            mostrarMensajeDisplay: 'block'
+
+	        });
 	    },
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
-	            null,
+	            { style: { background: '#2BA6CB' } },
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'text-center' },
 	                _react2.default.createElement(
-	                    'h3',
-	                    null,
-	                    'percentage: ',
-	                    this.state.valor,
-	                    ' '
+	                    'h2',
+	                    { style: { color: 'white ' } },
+	                    'Contactenos'
 	                ),
-	                _react2.default.createElement(_progresscircular2.default, {
-	                    strokeWidth: '10',
-	                    radius: '80',
-	                    percentage: this.state.percentage }),
 	                _react2.default.createElement(
 	                    'div',
-	                    null,
-	                    _react2.default.createElement('input', { type: 'text', ref: 'nombre', name: 'nombre', onKeyUp: this.onNombreChange, placeholder: 'Nombre' }),
-	                    _react2.default.createElement('input', { type: 'text', ref: 'email', name: 'email', onKeyUp: this.onEmailChange, disabled: !this.state.nombre, placeholder: 'email' }),
+	                    { className: 'row' },
 	                    _react2.default.createElement(
-	                        'span',
-	                        null,
-	                        this.state.mensajeEmail
-	                    ),
-	                    _react2.default.createElement('textarea', { ref: 'textarea', name: 'textarea', onKeyUp: this.onTextareaChange, placeholder: 'Nombre' }),
-	                    _react2.default.createElement(
-	                        'button',
-	                        { type: 'button', className: 'button', disabled: !this.state.email },
-	                        'Button'
+	                        'div',
+	                        { className: 'text-center', style: { color: '#DDDDDD' } },
+	                        _react2.default.createElement('div', { className: 'large-1 columns', style: { border: '1px solid #2BA6CB' } }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'large-4 columns' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'row' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'show-for-medium' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'row' },
+	                                        _react2.default.createElement(_progresscircular2.default, {
+	                                            strokeWidth: '10',
+	                                            radius: '90',
+	                                            percentage: this.state.valor })
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'row', style: { padding: '30px', color: 'white' } },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'titulo' },
+	                                        _react2.default.createElement(
+	                                            'h4',
+	                                            null,
+	                                            'Nodezi, Contacenos'
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        null,
+	                                        'sdasdasdasdasdasd'
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'large-5 columns' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'row', style: { paddingTop: '10px', paddingBottom: '10px', background: '#49B5D5' } },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { style: { margin: '10px 30px 30px 30px' } },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'row' },
+	                                        _react2.default.createElement(
+	                                            'form',
+	                                            { className: 'formulario' },
+	                                            _react2.default.createElement(
+	                                                'div',
+	                                                { className: 'row' },
+	                                                _react2.default.createElement(
+	                                                    'div',
+	                                                    { className: 'large-8 columns' },
+	                                                    _react2.default.createElement('input', { type: 'text', name: 'nombre', value: this.state.textNombreFirebase, onChange: this.onNombreChange, placeholder: 'Nombre' })
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                    'div',
+	                                                    { className: 'large-4 columns' },
+	                                                    _react2.default.createElement(
+	                                                        'h5',
+	                                                        { className: 'text-left' },
+	                                                        _react2.default.createElement(
+	                                                            'small',
+	                                                            null,
+	                                                            this.state.mensajeNombre
+	                                                        )
+	                                                    )
+	                                                )
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                'div',
+	                                                { className: 'row' },
+	                                                _react2.default.createElement(
+	                                                    'div',
+	                                                    { className: 'large-8 columns' },
+	                                                    _react2.default.createElement('input', { type: 'text', name: 'email', value: this.state.textEmailFirebase, onChange: this.onEmailChange, placeholder: 'Email' })
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                    'div',
+	                                                    { className: 'large-4 columns' },
+	                                                    _react2.default.createElement(
+	                                                        'h5',
+	                                                        { className: 'text-left' },
+	                                                        _react2.default.createElement(
+	                                                            'small',
+	                                                            null,
+	                                                            this.state.mensajeEmail
+	                                                        )
+	                                                    )
+	                                                )
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                'div',
+	                                                { className: 'row' },
+	                                                _react2.default.createElement(
+	                                                    'div',
+	                                                    { className: 'large-8 columns' },
+	                                                    _react2.default.createElement('textarea', { onChange: this.onTextareaChange, value: this.state.textTextareaFirebase, placeholder: 'Escribe tu consulta' })
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                    'div',
+	                                                    { className: 'large-4 columns' },
+	                                                    _react2.default.createElement(
+	                                                        'h5',
+	                                                        { className: 'text-left' },
+	                                                        _react2.default.createElement(
+	                                                            'small',
+	                                                            null,
+	                                                            this.state.mensajeTextarea
+	                                                        )
+	                                                    )
+	                                                )
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                'div',
+	                                                { className: 'row', style: { paddingTop: '20px' } },
+	                                                _react2.default.createElement(
+	                                                    'span',
+	                                                    { style: { display: this.state.mostrarMensajeDisplay } },
+	                                                    _react2.default.createElement(
+	                                                        'div',
+	                                                        { style: { background: '#C93434', border: '1px solid #A52B2B' } },
+	                                                        _react2.default.createElement(
+	                                                            'p',
+	                                                            null,
+	                                                            'Error Ingrese Correctamente los campos'
+	                                                        )
+	                                                    )
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                    'button',
+	                                                    { type: 'button', onClick: this.handleSubmit, className: 'button' },
+	                                                    'Button'
+	                                                )
+	                                            )
+	                                        )
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement('div', { className: 'large-2 columns', style: { border: '1px solid #2BA6CB' } })
 	                    )
 	                )
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { style: style.contact },
-	                _react2.default.createElement(_prueba2.default, null)
 	            )
 	        );
 	    }
