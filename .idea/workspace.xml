@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e0d5713-053e-459d-b6d8-5ad57828688c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/js/home.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reactjs/view/Contactenos/prueba.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/css/styles.css" afterPath="$PROJECT_DIR$/asset/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundle.js" afterPath="$PROJECT_DIR$/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ComponentsCss/contact/contact.styl" afterPath="$PROJECT_DIR$/src/ComponentsCss/contact/contact.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reactjs/App.js" afterPath="$PROJECT_DIR$/src/Reactjs/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reactjs/Prueba.js" afterPath="$PROJECT_DIR$/src/Reactjs/Prueba.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js" afterPath="$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="NodeziPrueba.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +28,8 @@
       <file leaf-file-name="contactenos.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="263" column="37" selection-start-line="263" selection-start-column="37" selection-end-line="263" selection-end-column="37" />
+            <state relative-caret-position="613">
+              <caret line="226" column="36" selection-start-line="226" selection-start-column="36" selection-end-line="226" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -50,7 +40,7 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reactjs/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="221">
               <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -73,7 +63,7 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reactjs/layout/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="17">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="34" />
               <folding />
             </state>
@@ -83,7 +73,7 @@
       <file leaf-file-name="preguntas.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="561">
               <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
               <folding />
             </state>
@@ -103,7 +93,7 @@
       <file leaf-file-name="contact.styl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ComponentsCss/contact/contact.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="510">
               <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
               <folding />
             </state>
@@ -197,7 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -440,7 +430,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,12 +485,13 @@
       <updated>1466787544300</updated>
       <workItem from="1466787546074" duration="34086000" />
       <workItem from="1466864289740" duration="11892000" />
-      <workItem from="1467034613616" duration="33765000" />
+      <workItem from="1467034613616" duration="33790000" />
+      <workItem from="1467119231805" duration="3996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79743000" />
+    <option name="totallyTimeSpent" value="83764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -535,18 +526,84 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reactjs/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#192#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reactjs/layout/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ComponentsCss/contact/contact.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ComponentsCss/contact/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Reactjs/component/ProgressCircular/progresscircular.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -560,14 +617,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/prueba.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/prueba.js" />
     <entry file="file://$PROJECT_DIR$/src/ComponentsCss/contact/contact.styl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -580,9 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -596,19 +643,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/prueba.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/prueba.js" />
     <entry file="file://$PROJECT_DIR$/src/ComponentsCss/home/home.styl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2414">
           <caret line="142" column="12" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,7 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="161" column="8" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,7 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,15 +725,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ComponentsCss/contact/contact.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="510">
           <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
           <folding />
         </state>
@@ -715,18 +748,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/prueba.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/prueba.js" />
     <entry file="file://$PROJECT_DIR$/src/ComponentsCss/contact/contact.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -755,7 +780,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reactjs/layout/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="34" />
           <folding />
         </state>
@@ -763,7 +788,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="561">
           <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
           <folding />
         </state>
@@ -779,7 +804,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reactjs/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="221">
           <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -790,8 +815,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="263" column="37" selection-start-line="263" selection-start-column="37" selection-end-line="263" selection-end-column="37" />
+        <state relative-caret-position="613">
+          <caret line="226" column="36" selection-start-line="226" selection-start-column="36" selection-end-line="226" selection-end-column="36" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

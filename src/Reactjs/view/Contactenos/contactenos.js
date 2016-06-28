@@ -23,7 +23,7 @@ let value=0;
 const SuccesMensaje=React.createClass({
     render(){
         return(
-            <div className="row" style={{display:this.props.styleOcultar}}>
+            <div className="row" style={{display:this.props.styleMostrar}}>
                 <div className="text-center" style={{color:'white'}}>
                     <div style={{margin:'70px'}}>
                         <h2>Hola {this.props.nombre},</h2>
@@ -59,8 +59,8 @@ const ViewContactenos=React.createClass({
             textTextareaFirebase:'',
 
             mostrarSucces:false,
-            mostrarSuccessDisplay:'block',
-            ocultarSuccessDisplay:'block'
+            showContacto:'block',
+            showMensaje:'none'
         };
     },
 
@@ -98,7 +98,9 @@ const ViewContactenos=React.createClass({
                 this.setState({valor:value,mensajeNombre:'Correct'})
             }
         }if(valorNombre.length<=3 ){
-            if(this.state.valor==33)
+            if(this.state.valor==0)
+                value=0;
+            else if(this.state.valor==33)
                 value=33;
             else if(this.state.valor==35)
                 value=35;
@@ -112,8 +114,6 @@ const ViewContactenos=React.createClass({
             }
         }
 
-
-
         if(value<0){
             value=0;
         }
@@ -121,7 +121,7 @@ const ViewContactenos=React.createClass({
             value=100;
         }
 
-        this.setState({valor:value})
+        this.setState({valor:value});
 
     },
 
@@ -151,7 +151,9 @@ const ViewContactenos=React.createClass({
                 this.setState({valor:value,mensajeEmail:'Correct'})
             }
         }else{
-            if(this.state.valor==32)
+            if(this.state.valor==0)
+                value=0
+            else if(this.state.valor==32)
                 value=32;
             else if(this.state.valor==35)
                 value=35;
@@ -200,7 +202,9 @@ const ViewContactenos=React.createClass({
                 this.setState({valor:value,mensajeTextarea:'Correct'})
             }
         }if(valorTextarea.length<=5 ){
-            if(this.state.valor==32)
+            if(this.state.valor==0)
+                value=0;
+            else if(this.state.valor==32)
                 value=32;
             else if(this.state.valor==33)
                 value=33;
@@ -220,9 +224,7 @@ const ViewContactenos=React.createClass({
         if(value>100){
             value=100;
         }
-
         this.setState({valor:value})
-
     },
 
     componentWillMount: function() {
@@ -240,36 +242,50 @@ const ViewContactenos=React.createClass({
             });
 
             this.setState({
-                mostrarSucces:true,
-                mostrarSuccessDisplay:'none',
-                valor:0
-            })
+                valor:0,
+                showMensajeNombre:this.state.textNombreFirebase,
+
+                textNombreFirebase:'',
+                textEmailFirebase:'',
+                textTextareaFirebase:'',
+
+                mostrarSucces:!this.mostrarSucces,
+                showContacto:'none',
+                showMensaje:'block'
+
+            });
             console.log("se activo nombre")
         }else
             this.setState({
                 mensajeError:'Ingrese correcamente los campos.',
-                mostrarMensajeDisplay:'block'
+                mostrarMensajeDisplay:'block',
+
+                value:0,
+                textNombreFirebase:'',
+                textEmailFirebase:'',
+                textTextareaFirebase:''
 
             });
     },
 
     retornarContacto(){
         this.setState({
-            mostrarSuccessDisplay:'block',
-            ocultarSuccessDisplay:'none',
+            showContacto:'block',
+            showMensaje:'none',
+
+            value:0,
             textNombreFirebase:'',
             textEmailFirebase:'',
             textTextareaFirebase:''
         });
-        console.log(this.state.nombre)
     },
     render(){
         return(
             <div  style={{background:'#2BA6CB',paddingTop:'20px'}}>
 
-                {this.state.mostrarSucces ? <SuccesMensaje nombre={this.state.textNombreFirebase} retorna={this.retornarContacto} styleOcultar={this.state.ocultarSuccessDisplay} ></SuccesMensaje> :null  }
+                {this.state.mostrarSucces ? <SuccesMensaje nombre={this.state.showMensajeNombre} retorna={this.retornarContacto} styleMostrar={this.state.showMensaje} ></SuccesMensaje> :null  }
 
-                <div className="text-center" style={{display:this.state.mostrarSuccessDisplay}}>
+                <div className="text-center" style={{display:this.state.showContacto}}>
                     <h2 style={{color:'white '}}>Contactenos</h2>
                     <div className="row">
                         <div className="text-center" style={{color:'#DDDDDD'}}>
