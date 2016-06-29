@@ -23,7 +23,6 @@ class ViewPreguntas  extends React.Component {
      })
   }
 
-
   render(){
     if(this.state.data.length > 0){
         return (
@@ -38,8 +37,6 @@ class ViewPreguntas  extends React.Component {
   }
   
 }
-
-
 
 class Question extends React.Component {
   

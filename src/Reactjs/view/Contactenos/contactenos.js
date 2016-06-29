@@ -40,7 +40,6 @@ const SuccesMensaje=React.createClass({
                     <div className="large-2 columns" style={{border:'1px solid #4CB050'}}></div>
 
                 </div>
-
             </div>
         );
     }

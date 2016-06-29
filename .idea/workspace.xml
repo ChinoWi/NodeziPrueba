@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e0d5713-053e-459d-b6d8-5ad57828688c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/images/admin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/images/usuario.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reactjs/view/data.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/css/styles.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/images/icon_menu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ComponentsCss/question/question.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/css/styles.css" afterPath="$PROJECT_DIR$/asset/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundle.js" afterPath="$PROJECT_DIR$/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ComponentsCss/question/question.styl" afterPath="$PROJECT_DIR$/src/ComponentsCss/question/question.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reactjs/App.js" afterPath="$PROJECT_DIR$/src/Reactjs/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js" afterPath="$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js" afterPath="$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="NodeziPrueba.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,14 +25,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="contactenos.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="contactenos.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="574">
+              <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preguntas.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,9 +151,10 @@
         <option value="$PROJECT_DIR$/src/Reactjs/component/slider/slider.js" />
         <option value="$PROJECT_DIR$/src/ComponentsCss/home/home.styl" />
         <option value="$PROJECT_DIR$/src/Reactjs/layout/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js" />
         <option value="$PROJECT_DIR$/asset/css/styles.css" />
         <option value="$PROJECT_DIR$/src/ComponentsCss/styles.styl" />
+        <option value="$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js" />
+        <option value="$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js" />
       </list>
     </option>
   </component>
@@ -498,15 +496,15 @@
       <workItem from="1467119231805" duration="13578000" />
       <workItem from="1467210334574" duration="1843000" />
       <workItem from="1467216210304" duration="261000" />
-      <workItem from="1467216799202" duration="600000" />
+      <workItem from="1467216799202" duration="651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96050000" />
+    <option name="totallyTimeSpent" value="96101000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -823,13 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -913,11 +904,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Contactenos/contactenos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="574">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
