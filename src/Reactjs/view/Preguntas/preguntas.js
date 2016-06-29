@@ -48,7 +48,7 @@ class Question extends React.Component {
     return(
            <div> 
                 <div className="row Frequently">
-                       <h3 className="large-12  text-center columns">Preguntas Frecuentes</h3>
+                       <h3 className="large-12  text-center columns">Preguntas Frecuentes williams</h3>
                 </div>
                 {
                 this.props.question.map((elem)=>{
