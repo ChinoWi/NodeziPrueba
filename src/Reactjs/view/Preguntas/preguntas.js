@@ -48,14 +48,14 @@ class Question extends React.Component {
     return(
            <div> 
                 <div className="row Frequently">
-                       <h3 className="large-12  text-center columns">Preguntas</h3>
+                       <h3 className="large-12  text-center columns">Preguntas Frecuentes</h3>
                 </div>
                 {
                 this.props.question.map((elem)=>{
                    return (
                      <article className="section-article"  key={elem.key}>
 
-                     <MediaQuery minWidth={1025}>
+                     <MediaQuery minWidth={1024}>
                         <div className="row  section-usuario"> 
                             <div className="large-5 large-push-2 columns">  
                               <img src="asset/images/usuario.png"/>
