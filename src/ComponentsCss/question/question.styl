@@ -1,25 +1,137 @@
-.questionSection
-	margin .5em 2em
-	&-title
-		text-align center
-		font-famiy 'Allerta'
-		color #068FCE
-		font-weigth bold
-		text-decoration underline
-	&-description
-		border 2px solid #D4D4D4
-		padding 1em .5em
-		margin .4em 0
-		color #068FCE
+.section
+	background #DEE1E3
+	// margin 0 21%
+	// padding 1em 1em	
+	&-usuario
+		padding 2em 0
+		margin-top .5em
+		img
+			border 2px solid white
+	&-UsuarioQuestion
+		position relative
+		right 20%
+		bottom 27px
+		margin 0
+		padding 0
+		padding-bottom 2em
+		border-radius 10px
+		background white
+		box-shadow: 0 3px 3px rgba(0,0,0,0.15);
+		margin-left .9em		    
+		    
+	&-User
+		color #00BAFF
+		background #FCFCFC
+		border-bottom 1px solid #E5E5E5
+		border-radius 10px
+		margin-left .5em
+		&:before
+			content "<"
+			font-weight bold
+			color white
+			position relative
+			right 15px
+	&-Question
+		color #1C3643
+		margin-left .5em
+		font-family 'Candal'
+	&-answer
+		width 680px
+		margin-left 30%
+		border-radius 10px
+		background white
+		box-shadow: 0 3px 3px rgba(0,0,0,0.15);
+		img
+			border 1px solid white
+			position absolute
+			left 26%
+	&-AdminAnswer
+		color #1C3643
+		font-family 'Rokkitt'
 		font-size 1.2em
-	&-content
-		color #273B47
-		display none
-		
-		
-	span
-		color #273B47
-		float right
-		font-weigth bold
-		
+	&-Admin
+		color #00BAFF
+		background #FCFCFC
+		border-bottom 1px solid #E5E5E5
+		border-radius 10px
+		margin-left .5em
+		&:before
+			content "<"
+			font-weight bold
+			color white
+			position relative
+			right 30px
+			bottom 2px
+			font-weight bold
 	
+.Frequently h3
+	font-family 'Rokkitt'
+	color #0A8ECD
+	text-decoration underline
+	
+		
+
+//Mobile first
+
+.mobile-user
+	box-shadow 0 3px 3px rgba(0,0,0,0.15)
+	background white
+	padding 1em 0
+	margin 3em 0
+	height 170px
+	position relative
+.mobile-user:hover
+	background #4A5352
+.mobile-user:after
+	height 3em
+	width .3em
+	background #273B47
+	content ''
+	position absolute
+	left 46%
+	bottom -3em
+	z-index 1
+	transform translateX(15px)
+.mobile-ContentUser img
+	border 1px solid #1E88E5
+	width 50px
+.mobile-usuario
+	color #7F7F7F 
+	border-bottom 1px solid #7F7F7F
+	font-family 'Candal'
+.mobile-administrador
+	color #7F7F7F 
+	border-bottom 1px solid #7F7F7F
+	font-family 'Candal'
+	text-align center
+.mobile-question
+	font-family 'Rokkitt'	
+	font-size 1.1em
+.mobile-answer
+	text-align center
+	font-family 'Rokkitt'	
+	font-size 1.1em
+.mobile-admin img
+	border 1px solid #1E88E5
+	width 50px
+	border-radius 50%
+	margin-left 44%
+.linea
+	position absolute
+	width 5px
+	height 20px
+	left 40px
+	margin auto
+	top -20px
+	background red
+	
+	
+
+
+	
+    
+		
+		
+
+	
+

@@ -1,0 +1,58 @@
+[
+
+  {
+  	"key":"1",
+  	"Pregunta":"¿Cuanto cuestan sus Servicios?",
+  	"Respuesta":"Nuestra plataforma se creo con el fin de brindar un buen servicio siempre considerando al cliente de una manera justa, y sacando a produccion un producto 100% usable."
+  },
+  {
+    "key":"2",
+    "Pregunta":"¿Cuanto Tardaran en entregarme mi Proyecto?",
+    "Respuesta":"Eso depende mucho de tu proyecto, nosotros usamos herramientas y tecnologias que nos ayudan a optimizar el proceso de desarrollo de tu aplicacion tales como frameworks y librerias"
+  },
+  {
+    "key":"3",
+    "Pregunta":"¿Mi  aplicacion sera Responsiva",
+    "Respuesta":"Claro que si nosotros trabajamos todos nuestros proyectos mobile first(Primero en mobiles y luego nos expandemos a las demas resoluciones)"
+  },
+  {
+    "key":"4",
+    "Pregunta":"¿Como manejan el posicionamiento en el navegador?",
+    "Respuesta":"De eso no te preocupes ya que tu proyecto tendra configurado archivos que le permitiran a los navegadores encontrarte en internet de manera  mas rapida"
+  },
+  {
+    "key":"5",
+    "Pregunta":"¿Tendre que dar un adelanto?",
+    "Respuesta":"Si pero sera un porcentaje minimo como garantia pero a cambio tendra derecho a exigir un avance por el porcentaje de adelanto"
+
+  },
+  {
+    "key":"6",
+    "Pregunta":"¿Tendre soporte para mi proyecto?",
+    "Respuesta":"Claro eso ni lo dudes estaremos pendiente ante algun cambio o duda que tenga de  como usar el producto final?"
+  },
+  {
+     "key":"7",
+     "Pregunta":"¿Cuanto Tiempo le daran soporte a mi proyecto?",
+     "Respuesta":"El Sopote maximo que tendra tu proyecto sera minimo de 3 meses y como maximo 6 meses dependiendo del tipo de proyecto fuera de ese tiempo tendra que hacer un pago extra para poder seguir con el soporte?"
+  },
+  {
+    "key":"8",
+    "Pregunta":"¿Mi proyecto sera seguro ante ataques maliciosos?",
+    "Respuesta":"Por eso no te preocupes en nuestro team tenemos personas que se dedican  especialmente al rubro de la seguridad de la informacion, que se encargaran de analizar tu proyecto y corregir las vulnerabilidades antes  de subirlo a internet"
+  },
+  {
+    "key":"9",
+    "Pregunta":"¿Como podre contactarme con ustedes durane el desarrollo de mi proyecto?",
+    "Respuesta":"Podras contactarnos via telefonica,celular o por nuestras redes sociales   como skipe,facebook,u otras"
+  },
+  {
+    "key":"10",
+    "Pregunta":"¿Podre verme presencialmente con ustedes en algun momento?",
+    "Respuesta":"Eso depende mucho a que distancia te encuentres de nosotros, pero si hay las posibilidades no dudes que haremos lo posible por hacer que se de"
+
+  }
+
+  
+
+]

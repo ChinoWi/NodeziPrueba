@@ -79,11 +79,11 @@
 
 	var _preguntas2 = _interopRequireDefault(_preguntas);
 
-	var _contactenos = __webpack_require__(257);
+	var _contactenos = __webpack_require__(264);
 
 	var _contactenos2 = _interopRequireDefault(_contactenos);
 
-	var _ = __webpack_require__(261);
+	var _ = __webpack_require__(267);
 
 	var _2 = _interopRequireDefault(_);
 
@@ -99,11 +99,14 @@
 	        _reactRouter.Route,
 	        { path: '/', component: _index2.default },
 	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
-	        _react2.default.createElement(_reactRouter.Router, { path: '/', component: _home2.default }),
-	        _react2.default.createElement(_reactRouter.Router, { path: 'Informacion', component: _informacion2.default }),
-	        _react2.default.createElement(_reactRouter.Router, { path: 'Contactenos', component: _contactenos2.default }),
-	        _react2.default.createElement(_reactRouter.Router, { path: 'Preguntas', component: _preguntas2.default }),
-	        _react2.default.createElement(_reactRouter.Router, { path: 'Blog' })
+	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _home2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'Informacion', component: _informacion2.default }),
+	        _react2.default.createElement(
+	            _reactRouter.Route,
+	            { path: 'Contactenos', component: _contactenos2.default },
+	            _react2.default.createElement(_reactRouter.Route, { path: 'Nuevo' })
+	        ),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'Preguntas', component: _preguntas2.default })
 	    ),
 	    _react2.default.createElement(_reactRouter.Route, { path: '*', component: _2.default })
 	), document.getElementById('react_app'));
@@ -26542,14 +26545,9 @@
 	                                    'Desarrollo de páginas web y sistemas a medida, implementando Seguridad Hacking'
 	                                ),
 	                                _react2.default.createElement(
-	                                    'p',
-	                                    { style: { fontSize: '15px' } },
+	                                    'h6',
+	                                    { style: { fontSize: '20px', color: 'white' } },
 	                                    'Confie en nosotros.'
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactRouter.Link,
-	                                    { to: '/Informacion', className: 'secondary button' },
-	                                    'Conocenos mas'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
@@ -26566,11 +26564,11 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'text-center', style: { padding: '20px' } },
-	                        'Cotiza tu Proyecto',
+	                        '¿Quienes Somos?',
 	                        _react2.default.createElement(
 	                            _reactRouter.Link,
-	                            { to: '/Informacion', className: 'secondary button' },
-	                            'Cotiza'
+	                            { to: '/Informacion', className: 'secondary button', style: { margin: '5px' } },
+	                            'Mas informacion'
 	                        )
 	                    )
 	                ),
@@ -26753,9 +26751,9 @@
 	            }, {
 	                key: 2,
 	                titulo: 'Security Web',
-	                url: 'asset/images/slider/security.png',
+	                url: 'asset/images/slider/owasp.png',
 	                texto: 'Seguridad, implementacion Owasp top 10.',
-	                color: '#6DD2E6'
+	                color: '#456FB6'
 	            }, {
 	                key: 3,
 	                titulo: 'App Design Movil',
@@ -29325,112 +29323,812 @@
 	    value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactResponsive = __webpack_require__(257);
+
+	var _reactResponsive2 = _interopRequireDefault(_reactResponsive);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var style = {
-	    mostrarr: {
-	        display: 'flex',
-	        color: 'color #273B47'
-	    },
-	    ocultarr: {
-	        display: 'none',
-	        color: 'color #273B47'
-	    }
-	};
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var ArticuloRespuestas = _react2.default.createClass({
-	    displayName: 'ArticuloRespuestas',
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            null,
-	            this.props.respuestamensaje
-	        );
-	    }
-	});
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	var ArticuloPreguntas = _react2.default.createClass({
-	    displayName: 'ArticuloPreguntas',
-	    getInitialState: function getInitialState() {
-	        return {
-	            showRespuesta: false
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var ViewPreguntas = function (_React$Component) {
+	    _inherits(ViewPreguntas, _React$Component);
+
+	    function ViewPreguntas(props) {
+	        _classCallCheck(this, ViewPreguntas);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ViewPreguntas).call(this, props));
+
+	        _this.state = {
+	            data: []
 	        };
-	    },
-	    handleClick: function handleClick() {
-	        this.setState({
-	            showRespuesta: !this.state.showRespuesta,
-	            icon: !this.state.icon
-	        });
-	    },
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'article',
-	            { className: 'questionSection-description col-12' },
-	            ' ',
-	            this.props.pregunta,
-	            ' ',
-	            _react2.default.createElement(
-	                'span',
-	                { onClick: this.handleClick },
-	                '+ '
-	            ),
-	            this.state.showRespuesta ? _react2.default.createElement(ArticuloRespuestas, { respuestamensaje: this.props.respuesta }) : null
-	        );
+	        return _this;
 	    }
-	});
 
-	var ViewPreguntas = _react2.default.createClass({
-	    displayName: 'ViewPreguntas',
-	    getInitialState: function getInitialState() {
-	        return {
-	            recorre: [{
-	                key: 1,
-	                pregunta: '¿Cuanto cuestan sus servicios?',
-	                respuesta: 'Nuestra plataforma se creo con el fin de brindar un buen servicio siempre considerando al cliente de una manera justa, y sacando a produccion un producto 100% usable. '
-	            }, {
-	                key: 2,
-	                pregunta: '¿Cuanto tardaran en entregarme mi Poryecto?',
-	                respuesta: 'Prueba2'
-	            }]
-	        };
-	    },
-	    handleClick: function handleClick() {
-	        alert('prueba');
-	    },
+	    _createClass(ViewPreguntas, [{
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            var _this2 = this;
 
-	    eachItem: function eachItem(preguntas) {
-	        return _react2.default.createElement(ArticuloPreguntas, { key: preguntas.key,
-	            pregunta: preguntas.pregunta,
-	            respuesta: preguntas.respuesta
+	            fetch('src/Reactjs/view/data.json').then(function (response) {
+	                return response.json();
+	            }).then(function (data) {
+	                _this2.setState({
+	                    data: data
+	                });
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            if (this.state.data.length > 0) {
+	                return _react2.default.createElement(
+	                    'section',
+	                    { className: 'section' },
+	                    _react2.default.createElement(Question, { question: this.state.data })
+	                );
+	            } else {
+	                return _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Cargando Preguntas'
+	                );
+	            }
+	        }
+	    }]);
 
-	        });
-	    },
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'main',
-	            { className: 'view-question' },
-	            _react2.default.createElement(
-	                'h1',
-	                { className: 'questionSection-title' },
-	                'Preguntas Frecuentes'
-	            ),
-	            _react2.default.createElement(
-	                'section',
-	                { id: 'question', className: 'questionSection roww' },
-	                this.state.recorre.map(this.eachItem)
-	            )
-	        );
+	    return ViewPreguntas;
+	}(_react2.default.Component);
+
+	var Question = function (_React$Component2) {
+	    _inherits(Question, _React$Component2);
+
+	    function Question() {
+	        _classCallCheck(this, Question);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Question).call(this));
 	    }
-	});
+
+	    _createClass(Question, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'row Frequently' },
+	                    _react2.default.createElement(
+	                        'h3',
+	                        { className: 'large-12  text-center columns' },
+	                        'Preguntas Frecuentes'
+	                    )
+	                ),
+	                this.props.question.map(function (elem) {
+	                    return _react2.default.createElement(
+	                        'article',
+	                        { className: 'section-article', key: elem.key },
+	                        _react2.default.createElement(
+	                            _reactResponsive2.default,
+	                            { minWidth: 1025 },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'row  section-usuario' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'large-5 large-push-2 columns' },
+	                                    _react2.default.createElement('img', { src: 'asset/images/usuario.png' })
+	                                ),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'large-7 columns section-UsuarioQuestion' },
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'section-User' },
+	                                        'Usuario'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'section-Question' },
+	                                        elem.Pregunta
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'row section-answer' },
+	                                _react2.default.createElement('img', { src: 'asset/images/admin.png' }),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'large-12  column section-AdminContentAnswer' },
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'section-Admin' },
+	                                        'Admin'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'section-AdminAnswer' },
+	                                        elem.Respuesta
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            _reactResponsive2.default,
+	                            { minWidth: 641 },
+	                            _react2.default.createElement(
+	                                'h1',
+	                                { className: 'hide-for-large' },
+	                                'JORGE'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            _reactResponsive2.default,
+	                            { maxWidth: 640 },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'row hide-for-medium  mobile-user' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'small-6 small-push-2 columns mobile-ContentUser' },
+	                                    _react2.default.createElement('img', { src: 'asset/images/usuario.png' })
+	                                ),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'small-6 columns' },
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'mobile-usuario' },
+	                                        'Usuario'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'mobile-question' },
+	                                        elem.Pregunta
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement('div', { className: 'linea' }),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'row mobile-admin' },
+	                                _react2.default.createElement('img', { src: 'asset/images/admin.png' }),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'small-12  column section-AdminContentAnswer' },
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'mobile-administrador' },
+	                                        'Admin'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'mobile-answer' },
+	                                        elem.Respuesta
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    );
+	                })
+	            );
+	        }
+	    }]);
+
+	    return Question;
+	}(_react2.default.Component);
+
 	exports.default = ViewPreguntas;
 
 /***/ },
 /* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+	var matchMedia = __webpack_require__(258);
+	var hyphenate = __webpack_require__(260);
+	var mediaQuery = __webpack_require__(261);
+	var toQuery = __webpack_require__(263);
+	var assign = __webpack_require__(262);
+
+	var defaultTypes = {
+	  component: React.PropTypes.node,
+	  query: React.PropTypes.string,
+	  values: React.PropTypes.shape(mediaQuery.matchers),
+	  children: React.PropTypes.array
+	};
+	var mediaKeys = Object.keys(mediaQuery.all);
+	var excludedQueryKeys = Object.keys(defaultTypes);
+	var excludedPropKeys = excludedQueryKeys.concat(mediaKeys);
+
+	function omit(object, keys){
+	  var newObject = assign({}, object);
+	  keys.forEach(function(key){
+	    delete newObject[key];
+	  });
+	  return newObject;
+	}
+
+	var mq = React.createClass({
+	  displayName: 'MediaQuery',
+
+	  getDefaultProps: function(){
+	    return {
+	      values: {}
+	    };
+	  },
+
+	  getInitialState: function(){
+	    return {
+	      matches: false
+	    };
+	  },
+
+	  componentWillMount: function(){
+	    this.updateQuery(this.props);
+	  },
+
+	  componentWillReceiveProps: function(props){
+	    this.updateQuery(props);
+	  },
+
+	  updateQuery: function(props){
+	    var values;
+	    if (props.query) {
+	      this.query = props.query;
+	    } else {
+	      this.query = toQuery(omit(props, excludedQueryKeys));
+	    }
+
+	    if (!this.query) {
+	      throw new Error('Invalid or missing MediaQuery!');
+	    }
+
+	    if (props.values) {
+	      values = Object.keys(props.values)
+	        .reduce(function(result, key){
+	          result[hyphenate(key)] = props.values[key];
+	          return result;
+	        }, {});
+	    }
+
+	    if (this._mql) {
+	      this._mql.removeListener(this.updateMatches);
+	    }
+
+	    this._mql = matchMedia(this.query, values);
+	    this._mql.addListener(this.updateMatches);
+	    this.updateMatches();
+	  },
+
+	  componentWillUnmount: function(){
+	    this._mql.removeListener(this.updateMatches);
+	  },
+
+	  updateMatches: function(){
+	    if (this._mql.matches === this.state.matches) {
+	      return;
+	    }
+	    this.setState({
+	      matches: this._mql.matches
+	    });
+	  },
+
+	  render: function(){
+	    if (this.state.matches === false) {
+	      return null;
+	    }
+	    var props = omit(this.props, excludedPropKeys);
+	    var hasMergeProps = Object.keys(props).length > 0;
+	    var wrapChildren = this.props.component ||
+	      React.Children.count(this.props.children) > 1 ||
+	      typeof this.props.children === 'string';
+	    if (wrapChildren) {
+	      return React.createElement(
+	        this.props.component || 'div',
+	        props,
+	        this.props.children
+	      );
+	    } else if (hasMergeProps) {
+	      return React.cloneElement(
+	        this.props.children,
+	        props
+	      );
+	    } else {
+	      return this.props.children;
+	    }
+	  }
+	});
+
+	module.exports = mq;
+
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var staticMatch = __webpack_require__(259).match;
+	var dynamicMatch = typeof window !== 'undefined' ? window.matchMedia : null;
+
+	// our fake MediaQueryList
+	function Mql(query, values){
+	  var self = this;
+	  if(dynamicMatch){
+	    var mql = dynamicMatch.call(window, query);
+	    this.matches = mql.matches;
+	    this.media = mql.media;
+	    // TODO: is there a time it makes sense to remove this listener?
+	    mql.addListener(update);
+	  } else {
+	    this.matches = staticMatch(query, values);
+	    this.media = query;
+	  }
+
+	  this.addListener = addListener;
+	  this.removeListener = removeListener;
+
+	  function addListener(listener){
+	    if(mql){
+	      mql.addListener(listener);
+	    }
+	  }
+
+	  function removeListener(listener){
+	    if(mql){
+	      mql.removeListener(listener);
+	    }
+	  }
+
+	  // update ourselves!
+	  function update(evt){
+	    self.matches = evt.matches;
+	    self.media = evt.media;
+	  }
+	}
+
+	function matchMedia(query, values){
+	  return new Mql(query, values);
+	}
+
+	module.exports = matchMedia;
+
+
+/***/ },
+/* 259 */
+/***/ function(module, exports) {
+
+	/*
+	Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+	Copyrights licensed under the New BSD License.
+	See the accompanying LICENSE file for terms.
+	*/
+
+	'use strict';
+
+	exports.match = matchQuery;
+	exports.parse = parseQuery;
+
+	// -----------------------------------------------------------------------------
+
+	var RE_MEDIA_QUERY     = /(?:(only|not)?\s*([^\s\(\)]+)(?:\s*and)?\s*)?(.+)?/i,
+	    RE_MQ_EXPRESSION   = /\(\s*([^\s\:\)]+)\s*(?:\:\s*([^\s\)]+))?\s*\)/,
+	    RE_MQ_FEATURE      = /^(?:(min|max)-)?(.+)/,
+	    RE_LENGTH_UNIT     = /(em|rem|px|cm|mm|in|pt|pc)?$/,
+	    RE_RESOLUTION_UNIT = /(dpi|dpcm|dppx)?$/;
+
+	function matchQuery(mediaQuery, values) {
+	    return parseQuery(mediaQuery).some(function (query) {
+	        var inverse = query.inverse;
+
+	        // Either the parsed or specified `type` is "all", or the types must be
+	        // equal for a match.
+	        var typeMatch = query.type === 'all' || values.type === query.type;
+
+	        // Quit early when `type` doesn't match, but take "not" into account.
+	        if ((typeMatch && inverse) || !(typeMatch || inverse)) {
+	            return false;
+	        }
+
+	        var expressionsMatch = query.expressions.every(function (expression) {
+	            var feature  = expression.feature,
+	                modifier = expression.modifier,
+	                expValue = expression.value,
+	                value    = values[feature];
+
+	            // Missing or falsy values don't match.
+	            if (!value) { return false; }
+
+	            switch (feature) {
+	                case 'orientation':
+	                case 'scan':
+	                    return value.toLowerCase() === expValue.toLowerCase();
+
+	                case 'width':
+	                case 'height':
+	                case 'device-width':
+	                case 'device-height':
+	                    expValue = toPx(expValue);
+	                    value    = toPx(value);
+	                    break;
+
+	                case 'resolution':
+	                    expValue = toDpi(expValue);
+	                    value    = toDpi(value);
+	                    break;
+
+	                case 'aspect-ratio':
+	                case 'device-aspect-ratio':
+	                case /* Deprecated */ 'device-pixel-ratio':
+	                    expValue = toDecimal(expValue);
+	                    value    = toDecimal(value);
+	                    break;
+
+	                case 'grid':
+	                case 'color':
+	                case 'color-index':
+	                case 'monochrome':
+	                    expValue = parseInt(expValue, 10) || 1;
+	                    value    = parseInt(value, 10) || 0;
+	                    break;
+	            }
+
+	            switch (modifier) {
+	                case 'min': return value >= expValue;
+	                case 'max': return value <= expValue;
+	                default   : return value === expValue;
+	            }
+	        });
+
+	        return (expressionsMatch && !inverse) || (!expressionsMatch && inverse);
+	    });
+	}
+
+	function parseQuery(mediaQuery) {
+	    return mediaQuery.split(',').map(function (query) {
+	        query = query.trim();
+
+	        var captures    = query.match(RE_MEDIA_QUERY),
+	            modifier    = captures[1],
+	            type        = captures[2],
+	            expressions = captures[3] || '',
+	            parsed      = {};
+
+	        parsed.inverse = !!modifier && modifier.toLowerCase() === 'not';
+	        parsed.type    = type ? type.toLowerCase() : 'all';
+
+	        // Split expressions into a list.
+	        expressions = expressions.match(/\([^\)]+\)/g) || [];
+
+	        parsed.expressions = expressions.map(function (expression) {
+	            var captures = expression.match(RE_MQ_EXPRESSION),
+	                feature  = captures[1].toLowerCase().match(RE_MQ_FEATURE);
+
+	            return {
+	                modifier: feature[1],
+	                feature : feature[2],
+	                value   : captures[2]
+	            };
+	        });
+
+	        return parsed;
+	    });
+	}
+
+	// -- Utilities ----------------------------------------------------------------
+
+	function toDecimal(ratio) {
+	    var decimal = Number(ratio),
+	        numbers;
+
+	    if (!decimal) {
+	        numbers = ratio.match(/^(\d+)\s*\/\s*(\d+)$/);
+	        decimal = numbers[1] / numbers[2];
+	    }
+
+	    return decimal;
+	}
+
+	function toDpi(resolution) {
+	    var value = parseFloat(resolution),
+	        units = String(resolution).match(RE_RESOLUTION_UNIT)[1];
+
+	    switch (units) {
+	        case 'dpcm': return value / 2.54;
+	        case 'dppx': return value * 96;
+	        default    : return value;
+	    }
+	}
+
+	function toPx(length) {
+	    var value = parseFloat(length),
+	        units = String(length).match(RE_LENGTH_UNIT)[1];
+
+	    switch (units) {
+	        case 'em' : return value * 16;
+	        case 'rem': return value * 16;
+	        case 'cm' : return value * 96 / 2.54;
+	        case 'mm' : return value * 96 / 2.54 / 10;
+	        case 'in' : return value * 96;
+	        case 'pt' : return value * 72;
+	        case 'pc' : return value * 72 / 12;
+	        default   : return value;
+	    }
+	}
+
+
+/***/ },
+/* 260 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var uppercasePattern = /[A-Z]/g;
+	var msPattern = /^ms-/;
+
+	function hyphenateStyleName(string) {
+	    return string
+	        .replace(uppercasePattern, '-$&')
+	        .toLowerCase()
+	        .replace(msPattern, '-ms-');
+	}
+
+	module.exports = hyphenateStyleName;
+
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var PropTypes = __webpack_require__(2).PropTypes;
+	var assign = __webpack_require__(262);
+
+	var stringOrNumber = PropTypes.oneOfType([
+	  PropTypes.string,
+	  PropTypes.number
+	]);
+
+	// properties that match media queries
+	var matchers = {
+	  orientation: PropTypes.oneOf([
+	    'portrait',
+	    'landscape'
+	  ]),
+
+	  scan: PropTypes.oneOf([
+	    'progressive',
+	    'interlace'
+	  ]),
+
+	  aspectRatio: PropTypes.string,
+	  deviceAspectRatio: PropTypes.string,
+
+	  height: stringOrNumber,
+	  deviceHeight: stringOrNumber,
+
+	  width: stringOrNumber,
+	  deviceWidth: stringOrNumber,
+
+	  color: PropTypes.bool,
+
+	  colorIndex: PropTypes.bool,
+
+	  monochrome: PropTypes.bool,
+	  resolution: stringOrNumber
+	};
+
+	// media features
+	var features = {
+	  minAspectRatio: PropTypes.string,
+	  maxAspectRatio: PropTypes.string,
+	  minDeviceAspectRatio: PropTypes.string,
+	  maxDeviceAspectRatio: PropTypes.string,
+
+	  minHeight: stringOrNumber,
+	  maxHeight: stringOrNumber,
+	  minDeviceHeight: stringOrNumber,
+	  maxDeviceHeight: stringOrNumber,
+
+	  minWidth: stringOrNumber,
+	  maxWidth: stringOrNumber,
+	  minDeviceWidth: stringOrNumber,
+	  maxDeviceWidth: stringOrNumber,
+
+	  minColor: PropTypes.number,
+	  maxColor: PropTypes.number,
+
+	  minColorIndex: PropTypes.number,
+	  maxColorIndex: PropTypes.number,
+
+	  minMonochrome: PropTypes.number,
+	  maxMonochrome: PropTypes.number,
+
+	  minResolution: stringOrNumber,
+	  maxResolution: stringOrNumber
+	};
+
+	assign(features, matchers);
+
+	// media types
+	var types = {
+	  all: PropTypes.bool,
+	  grid: PropTypes.bool,
+	  aural: PropTypes.bool,
+	  braille: PropTypes.bool,
+	  handheld: PropTypes.bool,
+	  print: PropTypes.bool,
+	  projection: PropTypes.bool,
+	  screen: PropTypes.bool,
+	  tty: PropTypes.bool,
+	  tv: PropTypes.bool,
+	  embossed: PropTypes.bool
+	};
+
+	var all = {};
+	assign(all, types);
+	assign(all, features);
+
+	// add the type property
+	assign(matchers, { type: Object.keys(types) });
+
+	module.exports = {
+	  all: all,
+	  types: types,
+	  matchers: matchers,
+	  features: features
+	};
+
+
+/***/ },
+/* 262 */
+/***/ function(module, exports) {
+
+	'use strict';
+	/* eslint-disable no-unused-vars */
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+	function toObject(val) {
+		if (val === null || val === undefined) {
+			throw new TypeError('Object.assign cannot be called with null or undefined');
+		}
+
+		return Object(val);
+	}
+
+	function shouldUseNative() {
+		try {
+			if (!Object.assign) {
+				return false;
+			}
+
+			// Detect buggy property enumeration order in older V8 versions.
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+			var test1 = new String('abc');  // eslint-disable-line
+			test1[5] = 'de';
+			if (Object.getOwnPropertyNames(test1)[0] === '5') {
+				return false;
+			}
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+			var test2 = {};
+			for (var i = 0; i < 10; i++) {
+				test2['_' + String.fromCharCode(i)] = i;
+			}
+			var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+				return test2[n];
+			});
+			if (order2.join('') !== '0123456789') {
+				return false;
+			}
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+			var test3 = {};
+			'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+				test3[letter] = letter;
+			});
+			if (Object.keys(Object.assign({}, test3)).join('') !==
+					'abcdefghijklmnopqrst') {
+				return false;
+			}
+
+			return true;
+		} catch (e) {
+			// We don't expect any of the above to throw, but better to be safe.
+			return false;
+		}
+	}
+
+	module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+		var from;
+		var to = toObject(target);
+		var symbols;
+
+		for (var s = 1; s < arguments.length; s++) {
+			from = Object(arguments[s]);
+
+			for (var key in from) {
+				if (hasOwnProperty.call(from, key)) {
+					to[key] = from[key];
+				}
+			}
+
+			if (Object.getOwnPropertySymbols) {
+				symbols = Object.getOwnPropertySymbols(from);
+				for (var i = 0; i < symbols.length; i++) {
+					if (propIsEnumerable.call(from, symbols[i])) {
+						to[symbols[i]] = from[symbols[i]];
+					}
+				}
+			}
+		}
+
+		return to;
+	};
+
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var hyphenate = __webpack_require__(260);
+	var mq = __webpack_require__(261);
+
+	function negate(cond) {
+	  return 'not ' + cond;
+	}
+
+	function keyVal(k, v) {
+	  var realKey = hyphenate(k);
+
+	  // px shorthand
+	  if (typeof v === 'number') {
+	    v = v+'px';
+	  }
+	  if (v === true) {
+	    return k;
+	  }
+	  if (v === false) {
+	    return negate(k);
+	  }
+	  return '('+realKey+': '+v+')';
+	}
+
+	function join(conds) {
+	  return conds.join(' and ');
+	}
+
+	module.exports = function(obj){
+	  var rules = [];
+	  Object.keys(mq.all).forEach(function(k){
+	    var v = obj[k];
+	    if (v != null) {
+	      rules.push(keyVal(k, v));
+	    }
+	  });
+	  return join(rules);
+	};
+
+
+/***/ },
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29443,15 +30141,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _prueba = __webpack_require__(258);
+	var _reactRouter = __webpack_require__(169);
 
-	var _prueba2 = _interopRequireDefault(_prueba);
-
-	var _progresscircular = __webpack_require__(259);
+	var _progresscircular = __webpack_require__(265);
 
 	var _progresscircular2 = _interopRequireDefault(_progresscircular);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var config = {
+	    apiKey: "6UjUW00u80Dvd7SwaYJYUiStT31XYmAfrZXcDJzx",
+	    databaseURL: "https://chromenodezi.firebaseio.com/"
+	};
+	firebase.initializeApp(config);
 
 	var style = {
 	    contact: {
@@ -29460,13 +30162,61 @@
 	        background: 'white'
 	    }
 	};
-
 	var value = 0;
+
+	var SuccesMensaje = _react2.default.createClass({
+	    displayName: 'SuccesMensaje',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'row', style: { display: this.props.styleMostrar } },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'text-center', style: { color: 'white' } },
+	                _react2.default.createElement('div', { className: 'large-1 columns', style: { border: '1px solid #4CB050' } }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'large-5 columns', style: { border: '1px solid #4CB050' } },
+	                    _react2.default.createElement('img', { src: 'asset/images/success.png', style: { height: '350px', width: '450px' }, alt: '' })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'large-4 columns', style: { border: '1px solid #4CB050' } },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { style: { margin: '50px' } },
+	                        _react2.default.createElement('img', { className: 'text-left', src: 'asset/images/icon_success.png', style: { height: '60px', width: '60px' }, alt: '' }),
+	                        _react2.default.createElement(
+	                            'h2',
+	                            null,
+	                            ' Hola ',
+	                            this.props.nombre,
+	                            ','
+	                        ),
+	                        _react2.default.createElement(
+	                            'h3',
+	                            null,
+	                            'Su mensaje a sido enviado.'
+	                        ),
+	                        _react2.default.createElement(
+	                            'button',
+	                            { onClick: this.props.retorna, className: 'button' },
+	                            'Volver a enviar Mensaje'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement('div', { className: 'large-2 columns', style: { border: '1px solid #4CB050' } })
+	            )
+	        );
+	    }
+	});
 
 	var ViewContactenos = _react2.default.createClass({
 	    displayName: 'ViewContactenos',
 
+
 	    mixins: [ReactFireMixin],
+
 	    getInitialState: function getInitialState() {
 	        return {
 	            valor: 0,
@@ -29478,10 +30228,14 @@
 	            items: [],
 	            textNombreFirebase: '',
 	            textEmailFirebase: '',
-	            textTextareaFirebase: ''
-	        };
+	            textTextareaFirebase: '',
 
-	        this.onNombreChange = this.onNombreChange.bind(this);
+	            mostrarSucces: false,
+	            showContacto: 'block',
+	            showMensaje: 'none',
+
+	            background: '#2BA6CB'
+	        };
 	    },
 	    validateEmail: function validateEmail(value) {
 	        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -29516,7 +30270,7 @@
 	                this.setState({ valor: value, mensajeNombre: 'Correct' });
 	            }
 	        }if (valorNombre.length <= 3) {
-	            if (this.state.valor == 33) value = 33;else if (this.state.valor == 35) value = 35;else if (this.state.valor == 68) value = 68;else {
+	            if (this.state.valor == 0) value = 0;else if (this.state.valor == 33) value = 33;else if (this.state.valor == 35) value = 35;else if (this.state.valor == 68) value = 68;else {
 	                value = value - 32;
 	                this.setState({
 	                    mensajeNombre: 'Min 4 caracteres, letras'
@@ -29559,7 +30313,7 @@
 	                this.setState({ valor: value, mensajeEmail: 'Correct' });
 	            }
 	        } else {
-	            if (this.state.valor == 32) value = 32;else if (this.state.valor == 35) value = 35;else if (this.state.valor == 67) value = 67;else {
+	            if (this.state.valor == 0) value = 0;else if (this.state.valor == 32) value = 32;else if (this.state.valor == 35) value = 35;else if (this.state.valor == 67) value = 67;else {
 	                value = value - 33;
 	                this.setState({
 	                    mensajeEmail: 'Ingrese email valido'
@@ -29581,7 +30335,6 @@
 	        this.setState({
 	            textTextareaFirebase: valorTextarea
 	        });
-
 	        if (valorTextarea.length >= 5 && valorTextarea != '') {
 	            this.setState({
 	                mostrarMensajeDisplay: 'none'
@@ -29602,7 +30355,7 @@
 	                this.setState({ valor: value, mensajeTextarea: 'Correct' });
 	            }
 	        }if (valorTextarea.length <= 5) {
-	            if (this.state.valor == 32) value = 32;else if (this.state.valor == 33) value = 33;else if (this.state.valor == 65) value = 65;else {
+	            if (this.state.valor == 0) value = 0;else if (this.state.valor == 32) value = 32;else if (this.state.valor == 33) value = 33;else if (this.state.valor == 65) value = 65;else {
 	                value = value - 35;
 	                this.setState({
 	                    mensajeTextarea: 'Min 6 caracteres'
@@ -29616,38 +30369,72 @@
 	        if (value > 100) {
 	            value = 100;
 	        }
-
 	        this.setState({ valor: value });
 	    },
 
 
 	    componentWillMount: function componentWillMount() {
-	        var firebaseRef = firebase.database().ref('todoApp/items');
-	        this.bindAsArray(firebaseRef.limitToLast(40), 'items');
+	        var firebaseReff = firebase.database().ref('todoApp/itemss');
+	        this.bindAsArray(firebaseReff.limitToLast(40), 'itemss');
 	    },
 
 	    handleSubmit: function handleSubmit(e) {
 	        e.preventDefault();
-	        if (this.state.valor == 100) {
-	            this.firebaseRefs['items'].push({
+	        if (this.state.valor == 100 && this.state.textNombreFirebase != '' && this.state.textEmailFirebase != '' && this.state.textTextareaFirebase != '') {
+	            this.firebaseRefs['itemss'].push({
 	                Nombres: this.state.textNombreFirebase,
 	                Email: this.state.textEmailFirebase,
 	                Mensaje: this.state.textTextareaFirebase
 	            });
+
+	            this.setState({
+	                valor: 0,
+	                showMensajeNombre: this.state.textNombreFirebase,
+
+	                textNombreFirebase: '',
+	                textEmailFirebase: '',
+	                textTextareaFirebase: '',
+
+	                mostrarSucces: !this.mostrarSucces,
+	                showContacto: 'none',
+	                showMensaje: 'block',
+
+	                background: '#4CB050'
+
+	            });
 	            console.log("se activo nombre");
 	        } else this.setState({
 	            mensajeError: 'Ingrese correcamente los campos.',
-	            mostrarMensajeDisplay: 'block'
+	            mostrarMensajeDisplay: 'block',
 
+	            value: 0,
+	            textNombreFirebase: '',
+	            textEmailFirebase: '',
+	            textTextareaFirebase: ''
+
+	        });
+	    },
+	    retornarContacto: function retornarContacto() {
+	        this.setState({
+	            showContacto: 'block',
+	            showMensaje: 'none',
+
+	            value: 0,
+	            textNombreFirebase: '',
+	            textEmailFirebase: '',
+	            textTextareaFirebase: '',
+
+	            background: '#2BA6CB'
 	        });
 	    },
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
-	            { style: { background: '#2BA6CB' } },
+	            { style: { background: this.state.background, paddingTop: '20px' } },
+	            this.state.mostrarSucces ? _react2.default.createElement(SuccesMensaje, { nombre: this.state.showMensajeNombre, retorna: this.retornarContacto, styleMostrar: this.state.showMensaje }) : null,
 	            _react2.default.createElement(
 	                'div',
-	                { className: 'text-center' },
+	                { className: 'text-center', style: { display: this.state.showContacto } },
 	                _react2.default.createElement(
 	                    'h2',
 	                    { style: { color: 'white ' } },
@@ -29703,7 +30490,7 @@
 	                            { className: 'large-5 columns' },
 	                            _react2.default.createElement(
 	                                'div',
-	                                { className: 'row', style: { paddingTop: '10px', paddingBottom: '10px', background: '#49B5D5' } },
+	                                { className: 'row', style: { paddingTop: '10px', background: '#49B5D5', marginBottom: '20px' } },
 	                                _react2.default.createElement(
 	                                    'div',
 	                                    { style: { margin: '10px 30px 30px 30px' } },
@@ -29798,7 +30585,7 @@
 	                                                _react2.default.createElement(
 	                                                    'button',
 	                                                    { type: 'button', onClick: this.handleSubmit, className: 'button' },
-	                                                    'Button'
+	                                                    'Enviar'
 	                                                )
 	                                            )
 	                                        )
@@ -29816,110 +30603,7 @@
 	exports.default = ViewContactenos;
 
 /***/ },
-/* 258 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var config = {
-	    apiKey: "6UjUW00u80Dvd7SwaYJYUiStT31XYmAfrZXcDJzx",
-	    databaseURL: "https://chromenodezi.firebaseio.com/"
-	};
-	firebase.initializeApp(config);
-
-	var style = {
-	    base: {
-	        textAlign: 'center',
-	        padding: '20px',
-	        width: '210px',
-	        margin: '16px auto'
-	    },
-	    input: {
-	        boxSizing: 'border-box',
-	        display: 'block',
-	        border: '1px solid #888',
-	        padding: '10px',
-	        margin: '10px'
-	    },
-	    button: {
-	        background: '#28d',
-	        borderColor: 'transparent',
-	        cursor: 'pointer',
-	        color: '#fff'
-	    }
-	};
-	var Nodezi = _react2.default.createClass({
-	    displayName: "Nodezi",
-
-	    mixins: [ReactFireMixin],
-
-	    getInitialState: function getInitialState() {
-	        return {
-	            items: [],
-	            text: '',
-	            placeholder: 'Ingresar'
-	        };
-	    },
-
-
-	    componentWillMount: function componentWillMount() {
-	        var FireApp = new firebase.database().ref('contacto/items');
-	        this.bindAsArray(FireApp, 'items');
-	    },
-
-	    onChange: function onChange(e) {
-	        this.setState({
-	            text: e.target.value
-
-	        });
-	    },
-
-	    handleChange: function handleChange(e) {
-	        this.setState({
-	            placeholder: e.target.value
-	        });
-	    },
-
-	    handleSubmit: function handleSubmit(e) {
-	        e.preventDefault();
-	        if (this.state.text && this.state.text.trim().length !== 0) {
-	            this.firebaseRefs['items'].push({
-	                text: this.state.text
-	            });
-	            this.setState({
-	                text: ''
-	            });
-	        }
-	    },
-
-	    render: function render() {
-	        return _react2.default.createElement(
-	            "form",
-	            { onSubmit: this.handleSubmit, style: style.base },
-	            _react2.default.createElement("input", { type: "text", onChange: this.onChange, value: this.state.text, placeholder: this.state.placeholder, style: style.input }),
-	            _react2.default.createElement(
-	                "button",
-	                { style: style.button },
-	                "Enviar"
-	            )
-	        );
-	    }
-	});
-
-	exports.default = Nodezi;
-
-/***/ },
-/* 259 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29934,7 +30618,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _jquery = __webpack_require__(260);
+	var _jquery = __webpack_require__(266);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -30018,7 +30702,7 @@
 	};
 
 /***/ },
-/* 260 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -40061,7 +40745,7 @@
 
 
 /***/ },
-/* 261 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

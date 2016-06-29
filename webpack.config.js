@@ -10,7 +10,7 @@ module.exports={
         historyApiFallback:true
     },
     resolver:{
-      extensions:['','.js','.jsx','es6'],
+      extensions:['','.js','.jsx','.json','es6'],
       modulesDirectories:['node_modules']
     },
     module:{
