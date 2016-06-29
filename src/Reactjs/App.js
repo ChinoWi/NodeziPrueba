@@ -5,7 +5,7 @@ import { browserHistory, Router,Route,IndexRoute} from 'react-router';
 //Layout
 import App from './layout/index.jsx';
 //Component
-import ViewHome from './view/Home/home'
+import ViewHome from './view/Home/home';
 import ViewInformacion from './view/Informacion/informacion';
 import ViewPreguntas from './view/Preguntas/preguntas';
 import Inbox from './view/Contactenos/contactenos'
