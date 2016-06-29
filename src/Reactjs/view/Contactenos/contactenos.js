@@ -25,21 +25,26 @@ const SuccesMensaje=React.createClass({
         return(
             <div className="row" style={{display:this.props.styleMostrar}}>
                 <div className="text-center" style={{color:'white'}}>
-                    <div style={{margin:'70px'}}>
-                        <h2>Hola {this.props.nombre},</h2>
-                        <h3>Su mensaje a sido enviado.</h3>
-                        <Link to="/Contactenos">Enviar a Informacion</Link>
-                        <button onClick={this.props.retorna} className="button">Volver a enviar Mensaje</button>
+                    <div className="large-1 columns" style={{border:'1px solid #4CB050'}}></div>
+                    <div className="large-5 columns" style={{border:'1px solid #4CB050'}}>
+                        <img src="asset/images/success.png" style={{height:'350px',width:'450px'}} alt=""/>
                     </div>
+                    <div className="large-4 columns" style={{border:'1px solid #4CB050'}}>
+                        <div style={{margin:'50px'}}>
+                            <img className="text-left" src="asset/images/icon_success.png" style={{height:'60px',width:'60px'}} alt=""/>
+                            <h2> Hola {this.props.nombre},</h2>
+                            <h3>Su mensaje a sido enviado.</h3>
+                            <button onClick={this.props.retorna} className="button">Volver a enviar Mensaje</button>
+                        </div>
+                    </div>
+                    <div className="large-2 columns" style={{border:'1px solid #4CB050'}}></div>
+
                 </div>
 
             </div>
         );
     }
 });
-
-export default SuccesMensaje;
-
 
 const ViewContactenos=React.createClass({
 
@@ -60,7 +65,9 @@ const ViewContactenos=React.createClass({
 
             mostrarSucces:false,
             showContacto:'block',
-            showMensaje:'none'
+            showMensaje:'none',
+
+            background:'#2BA6CB'
         };
     },
 
@@ -251,7 +258,9 @@ const ViewContactenos=React.createClass({
 
                 mostrarSucces:!this.mostrarSucces,
                 showContacto:'none',
-                showMensaje:'block'
+                showMensaje:'block',
+
+                background:'#4CB050'
 
             });
             console.log("se activo nombre")
@@ -276,12 +285,14 @@ const ViewContactenos=React.createClass({
             value:0,
             textNombreFirebase:'',
             textEmailFirebase:'',
-            textTextareaFirebase:''
+            textTextareaFirebase:'',
+
+            background:'#2BA6CB'
         });
     },
     render(){
         return(
-            <div  style={{background:'#2BA6CB',paddingTop:'20px'}}>
+            <div  style={{background:this.state.background,paddingTop:'20px'}}>
 
                 {this.state.mostrarSucces ? <SuccesMensaje nombre={this.state.showMensajeNombre} retorna={this.retornarContacto} styleMostrar={this.state.showMensaje} ></SuccesMensaje> :null  }
 

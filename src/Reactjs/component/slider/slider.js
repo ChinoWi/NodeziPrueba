@@ -80,9 +80,9 @@ const Slider=React.createClass({
                 {
                     key:2,
                     titulo:'Security Web',
-                    url:'asset/images/slider/security.png',
+                    url:'asset/images/slider/owasp.png',
                     texto:'Seguridad, implementacion Owasp top 10.',
-                    color:'#6DD2E6',
+                    color:'#456FB6',
                 },
                 {
                     key:3,

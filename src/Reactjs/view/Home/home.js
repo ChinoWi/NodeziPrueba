@@ -127,10 +127,8 @@ const ViewHome=React.createClass({
                         <div className="imagenfondodekstop" style={{height:'500px'}}>
                             <div className="row" style={{margin:'60px 10px 0 10px'}}>
                                 <div className="medium-6 large-6 columns">
-
                                         <h3 style={{color:'white'}}>Desarrollo de páginas web y sistemas a medida, implementando Seguridad Hacking</h3>
-                                        <p style={{fontSize:'15px'}}>Confie en nosotros.</p>
-                                        <Link to="/Informacion" className="secondary button">Conocenos mas</Link>
+                                        <h6 style={{fontSize:'20px',color:'white'}}>Confie en nosotros.</h6>
                                 </div>
                                 <div className="medium-6 large-6 columns">
                                     <PruebaModal></PruebaModal>
@@ -140,8 +138,8 @@ const ViewHome=React.createClass({
                     </section>
                     <section style={{background:'#00BCD4'}}>
                         <div className="text-center" style={{padding:'20px'}}>
-                            Cotiza tu Proyecto
-                            <Link to="/Informacion" className="secondary button" >Cotiza</Link>
+                            ¿Quienes Somos?
+                            <Link to="/Informacion" className="secondary button" style={{margin:'5px'}}>Mas informacion</Link>
                         </div>
                     </section>
                     <section id="sectionSlider">
