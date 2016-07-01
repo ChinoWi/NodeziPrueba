@@ -26068,50 +26068,36 @@
 
 	var MenuNav = _react2.default.createClass({
 	    displayName: 'MenuNav',
+
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            items: [{ ruta: '/', item: 'Home' }, { ruta: '/Informacion', item: 'Infomacion' }]
+	        };
+	    },
+
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'show-for-medium' },
-	            _react2.default.createElement(
-	                'ul',
-	                { className: 'nav', style: { backgroundAttachment: 'fixed' } },
-	                _react2.default.createElement(
+	            _react2.default.createElement(MenuItem, { items: this.state.items })
+	        );
+	    }
+	});
+
+	var MenuItem = _react2.default.createClass({
+	    displayName: 'MenuItem',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'ul',
+	            { className: 'nav', style: { backgroundAttachment: 'fixed' } },
+	            this.props.items.map(function (elem) {
+	                return _react2.default.createElement(
 	                    'li',
 	                    null,
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: '/' },
-	                        'Home'
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: '/Informacion' },
-	                        'Informacion'
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: '/Preguntas' },
-	                        'Preguntas'
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: '/Contactenos' },
-	                        'Contactenos'
-	                    )
-	                )
-	            )
+	                    elem.item
+	                );
+	            })
 	        );
 	    }
 	});
@@ -29422,7 +29408,7 @@
 	                    'div',
 	                    { className: 'row Frequently' },
 	                    _react2.default.createElement(
-	                        'h3',
+	                        'h4',
 	                        { className: 'large-12  text-center columns' },
 	                        'Preguntas Frecuentes'
 	                    )
@@ -29481,9 +29467,50 @@
 	                            _reactResponsive2.default,
 	                            { minWidth: 641 },
 	                            _react2.default.createElement(
-	                                'h1',
+	                                'div',
 	                                { className: 'hide-for-large' },
-	                                'JORGE'
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'row table-usuario' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'medium-3 medium-push-2 columns' },
+	                                        _react2.default.createElement('img', { src: 'asset/images/usuario.png' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'medium-9 columns table-UsuarioQuestion' },
+	                                        _react2.default.createElement(
+	                                            'label',
+	                                            { className: 'table-User' },
+	                                            'Usuario'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'label',
+	                                            { className: 'table-Question' },
+	                                            elem.Pregunta
+	                                        )
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'row table-answer' },
+	                                    _react2.default.createElement('img', { src: 'asset/images/admin.png' }),
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'medium-9  columns table-AdminContentAnswer' },
+	                                        _react2.default.createElement(
+	                                            'label',
+	                                            { className: 'table-Admin' },
+	                                            'Admin'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'label',
+	                                            { className: 'table-AdminAnswer' },
+	                                            elem.Respuesta
+	                                        )
+	                                    )
+	                                )
 	                            )
 	                        ),
 	                        _react2.default.createElement(

@@ -40,7 +40,6 @@ const Header1=React.createClass({
                             </div>
                         </div>
                     </div>
-                    <div className="sombraLine"></div>
                 </header>
 
             </div>
@@ -50,21 +49,45 @@ const Header1=React.createClass({
 });
 
 const MenuNav=React.createClass({
+   getInitialState: function(){
+     return{ 
+         items:[
+            {id:1,ruta:'/',item:'Home'},
+            {id:2,ruta:'/Informacion',item:'Infomacion'},
+            {id:3,ruta:'/Preguntas',item:'Preguntas'},
+            {id:4,ruta:'/Contactenos',item:'Contactenos'}
+         ] 
+       }
+    },
+
     render(){
         return(
             <div className="show-for-medium">
-                
-                <ul className="nav" style={{backgroundAttachment:'fixed'}}>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/Informacion">Informacion</Link></li>
-                    <li><Link to="/Preguntas">Preguntas</Link></li>
-                    <li><Link to="/Contactenos">Contactenos</Link></li>
-                </ul>
+                <MenuItem items={this.state.items} />
             </div>
-
         );
     }
+});
+
+
+
+const MenuItem = React.createClass({
+    render(){
+       return (
+         <ul className="nav">
+             {
+                this.props.items.map((elem) => {
+                    return (
+                        <li className="nav-item" key={elem.id}> <Link to={elem.ruta}>{elem.item}</Link></li>  
+                    )
+                })
+             }
+         </ul>   
+        )
+    }
 })
+
+
 
 const Footer=React.createClass({
     render(){

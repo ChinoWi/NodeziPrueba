@@ -127,8 +127,8 @@ const ViewHome=React.createClass({
                         <div className="imagenfondodekstop" style={{height:'500px'}}>
                             <div className="row" style={{margin:'60px 10px 0 10px'}}>
                                 <div className="medium-6 large-6 columns">
-                                        <h3 style={{color:'white'}}>Desarrollo de páginas web y sistemas a medida, implementando Seguridad Hacking</h3>
-                                        <h6 style={{fontSize:'20px',color:'white'}}>Confie en nosotros.</h6>
+                                        <h3 className="title-web">Desarrollo de páginas web y sistemas a medida, implementando Seguridad Hacking</h3>
+                                        <h6 className="title-we">Confie en nosotros.</h6>
                                 </div>
                                 <div className="medium-6 large-6 columns">
                                     <PruebaModal></PruebaModal>
