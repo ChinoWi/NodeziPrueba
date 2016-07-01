@@ -57,7 +57,7 @@ class Question extends React.Component {
 
                      <MediaQuery minWidth={1024}>
                         <div className="row  section-usuario"> 
-                            <div className="large-5 large-push-2 columns">  
+                            <div className="large-5 large-push-3 columns">  
                               <img src="asset/images/usuario.png"/>
                             </div>
                             <div className="large-7 columns section-UsuarioQuestion">
@@ -73,9 +73,28 @@ class Question extends React.Component {
                                </div>
                         </div>
                      </MediaQuery>
+
                      <MediaQuery minWidth={641}>
-                         <h1 className="hide-for-large">JORGE</h1> 
+                        <div className="hide-for-large">
+                        <div className="row table-usuario"> 
+                            <div className="medium-3 medium-push-2 columns">  
+                              <img src="asset/images/usuario.png"/>
+                            </div>
+                            <div className="medium-9 columns table-UsuarioQuestion">
+                                <label className="table-User">Usuario</label>   
+                                <label className="table-Question">{elem.Pregunta}</label>
+                            </div>
+                        </div>
+                        <div className="row table-answer">
+                                 <img src="asset/images/admin.png"/>
+                               <div className="medium-9  columns table-AdminContentAnswer">  
+                                <label className="table-Admin">Admin</label>
+                                <label className="table-AdminAnswer">{elem.Respuesta}</label>
+                               </div>
+                        </div>
+                       </div>
                      </MediaQuery>
+
                      <MediaQuery maxWidth={640}>
                         <div className="row hide-for-medium  mobile-user"> 
                             <div className="small-6 small-push-2 columns mobile-ContentUser">  

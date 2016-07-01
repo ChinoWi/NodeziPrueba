@@ -1,5 +1,5 @@
 .section
-	background #DEE1E3
+	background white
 	// margin 0 21%
 	// padding 1em 1em	
 	&-usuario
@@ -15,50 +15,60 @@
 		padding 0
 		padding-bottom 2em
 		border-radius 10px
-		background white
-		box-shadow: 0 3px 3px rgba(0,0,0,0.15);
-		margin-left .9em		    
+		background #B6D6FC
+		box-shadow  0 3px 3px #273B47
+		margin-left .9em
+		border 1px solid #4764A8
+	&-UsuarioQuestion:hover
+		border-radius 0
+		border 1px solid #273B47
+		transition border-radius 1s	ease-out, border 2s ease	    
 		    
 	&-User
-		color #00BAFF
-		background #FCFCFC
-		border-bottom 1px solid #E5E5E5
-		border-radius 10px
+		color #1c3643
+		border-bottom 2px solid #E5E5E5
 		margin-left .5em
+		font-weight bold
 		&:before
 			content "<"
 			font-weight bold
-			color white
+			color #1C3643
 			position relative
 			right 15px
 	&-Question
 		color #1C3643
 		margin-left .5em
 		font-family 'Candal'
+		font-weight normal
 	&-answer
 		width 680px
 		margin-left 30%
 		border-radius 10px
-		background white
-		box-shadow: 0 3px 3px rgba(0,0,0,0.15);
+		background #8DD446
+		border 1px solid #1C6516
+		box-shadow 0 3px 3px #273B47
 		img
 			border 1px solid white
 			position absolute
 			left 26%
+	&-answer:hover
+		border-radius 0
+		border 1px solid #4764A8
+		transition border-radius 1s	ease-out, border 2s ease
 	&-AdminAnswer
-		color #1C3643
-		font-family 'Rokkitt'
-		font-size 1.2em
+		color white
+		font-family 'Candal'
+		font-size .9em
 	&-Admin
-		color #00BAFF
-		background #FCFCFC
+		color #1c3643
+		background #8DD446
 		border-bottom 1px solid #E5E5E5
-		border-radius 10px
 		margin-left .5em
+		font-weight bold
 		&:before
 			content "<"
 			font-weight bold
-			color white
+			color #333339
 			position relative
 			right 30px
 			bottom 2px
@@ -66,7 +76,7 @@
 	
 .Frequently h3
 	font-family 'Rokkitt'
-	color #0A8ECD
+	color #1C3643
 	text-decoration underline
 	
 		
@@ -74,43 +84,50 @@
 //Mobile first
 
 .mobile-user
-	box-shadow 0 3px 3px rgba(0,0,0,0.15)
-	background white
-	padding 1em 0
-	margin 3em 0
-	height 170px
+	box-shadow  0 3px 3px #273B47
+	background #B6D6FC
+	padding-top 1em
+	padding-bottom 4em
+	margin 2em 0
+	height 250px
 	position relative
-.mobile-user:hover
-	background #4A5352
+	font-size 1.2em
+	max-width 100%
 .mobile-user:after
-	height 3em
+	height 2em
 	width .3em
-	background #273B47
+	background #7FC719
 	content ''
 	position absolute
 	left 46%
-	bottom -3em
+	bottom -2em
 	z-index 1
 	transform translateX(15px)
 .mobile-ContentUser img
 	border 1px solid #1E88E5
 	width 50px
 .mobile-usuario
-	color #7F7F7F 
+	color #273B47
 	border-bottom 1px solid #7F7F7F
 	font-family 'Candal'
+	font-size 1.2em
 .mobile-administrador
-	color #7F7F7F 
+	color #273B47
 	border-bottom 1px solid #7F7F7F
 	font-family 'Candal'
 	text-align center
+	font-size 1.2em
 .mobile-question
 	font-family 'Rokkitt'	
 	font-size 1.1em
+	color white
 .mobile-answer
 	text-align center
 	font-family 'Rokkitt'	
-	font-size 1.1em
+	font-size 1.2em
+	background #8DD446
+	color white
+	box-shadow  0 3px 3px #273B47
 .mobile-admin img
 	border 1px solid #1E88E5
 	width 50px
@@ -125,6 +142,57 @@
 	top -20px
 	background red
 	
+
+//Tablet
+
+.table-usuario
+	padding 2em 0
+	margin 4% 5%
+	img
+		border 2px solid green
+.table-UsuarioQuestion
+	position relative
+	bottom 27px
+	margin 0
+	padding 0
+	padding-bottom 2em
+	border-radius 10px
+	background #B6D6FC
+	box-shadow  0 3px 3px #273B47
+	border 1px solid #4764A8		
+.table-User
+	color #1c3643
+	border-bottom 2px solid #E5E5E5
+	margin-left .5em
+	font-weight bold
+.table-Question
+	color #1C3643
+	margin-left .5em
+	font-family 'Candal'
+	font-weight normal
+
+.table-AdminContentAnswer
+	border 1px solid red
+	width 430px
+.table-answer
+	border 1px solid blue
+	width 430px
+	border-radius 10px
+	margin-left 30%
+	background #8DD446
+	border 1px solid #1C6516
+	box-shadow 0 3px 3px #273B47
+	img
+		border 1px solid white
+		position absolute
+		left 23%
+		
+
+	
+	
+	
+
+
 	
 
 

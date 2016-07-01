@@ -26886,8 +26886,7 @@
 	      }, _this.handleInterval = function () {
 	        var _this$props = _this.props;
 	        var children = _this$props.children;
-	        var // eslint-disable-line react/prop-types
-	        direction = _this$props.direction;
+	        var direction = _this$props.direction;
 
 
 	        var indexNew = _this.state.index;
@@ -26898,7 +26897,7 @@
 	          indexNew -= 1;
 	        }
 
-	        indexNew = mod(indexNew, _react2.default.Children.count(children));
+	        indexNew = mod(indexNew, _react.Children.count(children));
 
 	        _this.setState({
 	          index: indexNew
@@ -26981,9 +26980,7 @@
 	      key: 'render',
 	      value: function render() {
 	        var _props2 = this.props;
-	        var
-	        /* eslint-disable no-unused-vars */
-	        autoplay = _props2.autoplay;
+	        var autoplay = _props2.autoplay;
 	        var direction = _props2.direction;
 	        var interval = _props2.interval;
 
@@ -27059,8 +27056,6 @@
 
 	var _reactDom = __webpack_require__(39);
 
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _reactMotion = __webpack_require__(238);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -27104,9 +27099,13 @@
 	    }
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(SwipeableViews)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.handleTouchStart = function (event) {
+	      if (_this.props.onTouchStart) {
+	        _this.props.onTouchStart(event);
+	      }
+
 	      var touch = event.touches[0];
 
-	      _this.startWidth = _reactDom2.default.findDOMNode(_this).getBoundingClientRect().width;
+	      _this.startWidth = (0, _reactDom.findDOMNode)(_this).getBoundingClientRect().width;
 	      _this.startX = touch.pageX;
 	      _this.lastX = touch.pageX;
 	      _this.vx = 0;
@@ -27167,7 +27166,11 @@
 	          _this.props.onSwitching(index, 'move');
 	        }
 	      });
-	    }, _this.handleTouchEnd = function () {
+	    }, _this.handleTouchEnd = function (event) {
+	      if (_this.props.onTouchEnd) {
+	        _this.props.onTouchEnd(event);
+	      }
+
 	      // The touch start event can be cancel.
 	      // Makes sure that a starting point is set.
 	      if (!_this.started) {
@@ -27299,23 +27302,20 @@
 	      var _this2 = this;
 
 	      var _props = this.props;
-	      var
-	      /* eslint-disable no-unused-vars */
-	      index = _props.index;
+	      var index = _props.index;
 	      var onChangeIndex = _props.onChangeIndex;
 	      var onSwitching = _props.onSwitching;
 	      var resistance = _props.resistance;
 	      var threshold = _props.threshold;
-	      var
-	      /* eslint-enable no-unused-vars */
-	      children = _props.children;
+	      var animateTransitions = _props.animateTransitions;
+	      var children = _props.children;
 	      var containerStyle = _props.containerStyle;
 	      var slideStyle = _props.slideStyle;
 	      var disabled = _props.disabled;
 	      var springConfig = _props.springConfig;
 	      var style = _props.style;
 
-	      var other = _objectWithoutProperties(_props, ['index', 'onChangeIndex', 'onSwitching', 'resistance', 'threshold', 'children', 'containerStyle', 'slideStyle', 'disabled', 'springConfig', 'style']);
+	      var other = _objectWithoutProperties(_props, ['index', 'onChangeIndex', 'onSwitching', 'resistance', 'threshold', 'animateTransitions', 'children', 'containerStyle', 'slideStyle', 'disabled', 'springConfig', 'style']);
 
 	      var _state = this.state;
 	      var indexCurrent = _state.indexCurrent;
@@ -27327,7 +27327,7 @@
 	      var translate = indexCurrent * 100;
 	      var height = heightLatest;
 
-	      var motionStyle = isDragging ? {
+	      var motionStyle = isDragging || !animateTransitions ? {
 	        translate: translate,
 	        height: height
 	      } : {
@@ -27390,6 +27390,10 @@
 
 	SwipeableViews.propTypes = {
 	  /**
+	   * If `false`, changes to the index prop will not cause an animated transition.
+	   */
+	  animateTransitions: _react.PropTypes.bool,
+	  /**
 	   * Use this property to provide your slides.
 	   */
 	  children: _react.PropTypes.node.isRequired,
@@ -27399,7 +27403,7 @@
 	   */
 	  containerStyle: _react.PropTypes.object,
 	  /**
-	   * If true, it will disable touch events.
+	   * If `true`, it will disable touch events.
 	   * This is useful when you want to prohibit the user from changing slides.
 	   */
 	  disabled: _react.PropTypes.bool,
@@ -27428,7 +27432,15 @@
 	   */
 	  onSwitching: _react.PropTypes.func,
 	  /**
-	   * If true, it will add bounds effect on the edges.
+	   * @ignore
+	   */
+	  onTouchEnd: _react.PropTypes.func,
+	  /**
+	   * @ignore
+	   */
+	  onTouchStart: _react.PropTypes.func,
+	  /**
+	   * If `true`, it will add bounds effect on the edges.
 	   */
 	  resistance: _react.PropTypes.bool,
 	  /**
@@ -27453,6 +27465,7 @@
 	  threshold: _react.PropTypes.number
 	};
 	SwipeableViews.defaultProps = {
+	  animateTransitions: true,
 	  index: 0,
 	  threshold: 5,
 	  resistance: false,
@@ -29420,7 +29433,7 @@
 	                        { className: 'section-article', key: elem.key },
 	                        _react2.default.createElement(
 	                            _reactResponsive2.default,
-	                            { minWidth: 1025 },
+	                            { minWidth: 1024 },
 	                            _react2.default.createElement(
 	                                'div',
 	                                { className: 'row  section-usuario' },
