@@ -15,68 +15,72 @@
 		padding 0
 		padding-bottom 2em
 		border-radius 10px
-		background #B6D6FC
-		box-shadow  0 3px 3px #273B47
+		background white
+		box-shadow  0 3px 3px #AE3D3D
 		margin-left .9em
-		border 1px solid #4764A8
+		border 2px solid #EF4D4E
 	&-UsuarioQuestion:hover
 		border-radius 0
-		border 1px solid #273B47
-		transition border-radius 1s	ease-out, border 2s ease	    
+		border 3px solid #EF4D4E
+		box-shadow 0px 0px 0px white
+		transition border-radius 1s	ease-out, border 1s ease, box-shadow 1s ease-out	    
 		    
 	&-User
-		color #1c3643
-		border-bottom 2px solid #E5E5E5
+		color #EA1C2B
+		border-bottom .5px solid #EF4D4E
 		margin-left .5em
 		font-weight bold
 		&:before
 			content "<"
 			font-weight bold
-			color #1C3643
+			color #FF4842
 			position relative
 			right 15px
 	&-Question
-		color #1C3643
+		color #FF4847
 		margin-left .5em
-		font-family 'Candal'
+		font-family 'Rokkitt'
 		font-weight normal
+		font-size 1.2em
 	&-answer
 		width 680px
 		margin-left 30%
 		border-radius 10px
 		background #8DD446
-		border 1px solid #1C6516
-		box-shadow 0 3px 3px #273B47
+		border 2px solid #4A81B3
+		box-shadow 0 3px 3px #0D5284
 		img
 			border 1px solid white
 			position absolute
 			left 26%
 	&-answer:hover
 		border-radius 0
-		border 1px solid #4764A8
-		transition border-radius 1s	ease-out, border 2s ease
+		border 3px solid #4A81B3
+		box-shadow 0px 0px 0px white
+		transition border-radius 1s	ease-out, border 1s ease, box-shadow 1s ease-out 
 	&-AdminAnswer
-		color white
-		font-family 'Candal'
-		font-size .9em
+		color #3B5998
+		font-family 'Rokkitt'
+		font-size 1.2em
+	&-AdminContentAnswer
+		background white
 	&-Admin
-		color #1c3643
-		background #8DD446
-		border-bottom 1px solid #E5E5E5
+		color #0D5284
+		border-bottom .5px solid #4A81B3
 		margin-left .5em
 		font-weight bold
 		&:before
 			content "<"
 			font-weight bold
-			color #333339
+			color #4267B2
 			position relative
 			right 30px
 			bottom 2px
 			font-weight bold
 	
-.Frequently h3
-	font-family 'Rokkitt'
-	color #1C3643
+.Frequently h4
+	font-family 'Candal'
+	color #5F6A70
 	text-decoration underline
 	
 		
@@ -84,19 +88,19 @@
 //Mobile first
 
 .mobile-user
-	box-shadow  0 3px 3px #273B47
-	background #B6D6FC
+	background white
 	padding-top 1em
 	padding-bottom 4em
 	margin 2em 0
-	height 250px
+	height 230px
 	position relative
 	font-size 1.2em
 	max-width 100%
+	border-bottom 1px solid #EA1C2B
 .mobile-user:after
 	height 2em
 	width .3em
-	background #7FC719
+	background #3083F7
 	content ''
 	position absolute
 	left 46%
@@ -106,28 +110,28 @@
 .mobile-ContentUser img
 	border 1px solid #1E88E5
 	width 50px
+	margin-top 40px
 .mobile-usuario
-	color #273B47
-	border-bottom 1px solid #7F7F7F
+	color #EA1C2B
+	border-bottom 1px solid #EF4D4E
 	font-family 'Candal'
 	font-size 1.2em
 .mobile-administrador
-	color #273B47
-	border-bottom 1px solid #7F7F7F
+	color #0D5284
 	font-family 'Candal'
 	text-align center
 	font-size 1.2em
+	border-bottom 1px solid #4A81B3
 .mobile-question
 	font-family 'Rokkitt'	
 	font-size 1.1em
-	color white
+	color #FF4D47
 .mobile-answer
 	text-align center
 	font-family 'Rokkitt'	
 	font-size 1.2em
-	background #8DD446
-	color white
-	box-shadow  0 3px 3px #273B47
+	background white
+	color #3B72AE
 .mobile-admin img
 	border 1px solid #1E88E5
 	width 50px
@@ -157,35 +161,39 @@
 	padding 0
 	padding-bottom 2em
 	border-radius 10px
-	background #B6D6FC
-	box-shadow  0 3px 3px #273B47
-	border 1px solid #4764A8		
+	background white
+	box-shadow  0 3px 3px #EA1C2B
+	border 1px solid #EA1C2B		
 .table-User
-	color #1c3643
-	border-bottom 2px solid #E5E5E5
+	color #EA1C2B
+	border-bottom .5px solid #EF4D4E
 	margin-left .5em
 	font-weight bold
 .table-Question
-	color #1C3643
+	color #FF4847
 	margin-left .5em
 	font-family 'Candal'
 	font-weight normal
 
 .table-AdminContentAnswer
-	border 1px solid red
+	border 1px solid #4A81B3
 	width 430px
 .table-answer
-	border 1px solid blue
 	width 430px
 	border-radius 10px
 	margin-left 30%
-	background #8DD446
-	border 1px solid #1C6516
-	box-shadow 0 3px 3px #273B47
+	background white
+	box-shadow 0 3px 3px #4A81B3
 	img
 		border 1px solid white
 		position absolute
 		left 23%
+.table-Admin
+	color #0D5287
+	font-weight bold
+	border-bottom .5px solid #4A81B3
+.table-AdminAnswer
+	color #3B7DC1
 		
 
 	
