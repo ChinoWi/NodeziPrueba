@@ -26886,7 +26886,8 @@
 	      }, _this.handleInterval = function () {
 	        var _this$props = _this.props;
 	        var children = _this$props.children;
-	        var direction = _this$props.direction;
+	        var // eslint-disable-line react/prop-types
+	        direction = _this$props.direction;
 
 
 	        var indexNew = _this.state.index;
@@ -26897,7 +26898,7 @@
 	          indexNew -= 1;
 	        }
 
-	        indexNew = mod(indexNew, _react.Children.count(children));
+	        indexNew = mod(indexNew, _react2.default.Children.count(children));
 
 	        _this.setState({
 	          index: indexNew
@@ -26980,7 +26981,9 @@
 	      key: 'render',
 	      value: function render() {
 	        var _props2 = this.props;
-	        var autoplay = _props2.autoplay;
+	        var
+	        /* eslint-disable no-unused-vars */
+	        autoplay = _props2.autoplay;
 	        var direction = _props2.direction;
 	        var interval = _props2.interval;
 
@@ -27056,6 +27059,8 @@
 
 	var _reactDom = __webpack_require__(39);
 
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
 	var _reactMotion = __webpack_require__(238);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -27099,13 +27104,9 @@
 	    }
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(SwipeableViews)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.handleTouchStart = function (event) {
-	      if (_this.props.onTouchStart) {
-	        _this.props.onTouchStart(event);
-	      }
-
 	      var touch = event.touches[0];
 
-	      _this.startWidth = (0, _reactDom.findDOMNode)(_this).getBoundingClientRect().width;
+	      _this.startWidth = _reactDom2.default.findDOMNode(_this).getBoundingClientRect().width;
 	      _this.startX = touch.pageX;
 	      _this.lastX = touch.pageX;
 	      _this.vx = 0;
@@ -27166,11 +27167,7 @@
 	          _this.props.onSwitching(index, 'move');
 	        }
 	      });
-	    }, _this.handleTouchEnd = function (event) {
-	      if (_this.props.onTouchEnd) {
-	        _this.props.onTouchEnd(event);
-	      }
-
+	    }, _this.handleTouchEnd = function () {
 	      // The touch start event can be cancel.
 	      // Makes sure that a starting point is set.
 	      if (!_this.started) {
@@ -27302,20 +27299,23 @@
 	      var _this2 = this;
 
 	      var _props = this.props;
-	      var index = _props.index;
+	      var
+	      /* eslint-disable no-unused-vars */
+	      index = _props.index;
 	      var onChangeIndex = _props.onChangeIndex;
 	      var onSwitching = _props.onSwitching;
 	      var resistance = _props.resistance;
 	      var threshold = _props.threshold;
-	      var animateTransitions = _props.animateTransitions;
-	      var children = _props.children;
+	      var
+	      /* eslint-enable no-unused-vars */
+	      children = _props.children;
 	      var containerStyle = _props.containerStyle;
 	      var slideStyle = _props.slideStyle;
 	      var disabled = _props.disabled;
 	      var springConfig = _props.springConfig;
 	      var style = _props.style;
 
-	      var other = _objectWithoutProperties(_props, ['index', 'onChangeIndex', 'onSwitching', 'resistance', 'threshold', 'animateTransitions', 'children', 'containerStyle', 'slideStyle', 'disabled', 'springConfig', 'style']);
+	      var other = _objectWithoutProperties(_props, ['index', 'onChangeIndex', 'onSwitching', 'resistance', 'threshold', 'children', 'containerStyle', 'slideStyle', 'disabled', 'springConfig', 'style']);
 
 	      var _state = this.state;
 	      var indexCurrent = _state.indexCurrent;
@@ -27327,7 +27327,7 @@
 	      var translate = indexCurrent * 100;
 	      var height = heightLatest;
 
-	      var motionStyle = isDragging || !animateTransitions ? {
+	      var motionStyle = isDragging ? {
 	        translate: translate,
 	        height: height
 	      } : {
@@ -27390,10 +27390,6 @@
 
 	SwipeableViews.propTypes = {
 	  /**
-	   * If `false`, changes to the index prop will not cause an animated transition.
-	   */
-	  animateTransitions: _react.PropTypes.bool,
-	  /**
 	   * Use this property to provide your slides.
 	   */
 	  children: _react.PropTypes.node.isRequired,
@@ -27403,7 +27399,7 @@
 	   */
 	  containerStyle: _react.PropTypes.object,
 	  /**
-	   * If `true`, it will disable touch events.
+	   * If true, it will disable touch events.
 	   * This is useful when you want to prohibit the user from changing slides.
 	   */
 	  disabled: _react.PropTypes.bool,
@@ -27432,15 +27428,7 @@
 	   */
 	  onSwitching: _react.PropTypes.func,
 	  /**
-	   * @ignore
-	   */
-	  onTouchEnd: _react.PropTypes.func,
-	  /**
-	   * @ignore
-	   */
-	  onTouchStart: _react.PropTypes.func,
-	  /**
-	   * If `true`, it will add bounds effect on the edges.
+	   * If true, it will add bounds effect on the edges.
 	   */
 	  resistance: _react.PropTypes.bool,
 	  /**
@@ -27465,7 +27453,6 @@
 	  threshold: _react.PropTypes.number
 	};
 	SwipeableViews.defaultProps = {
-	  animateTransitions: true,
 	  index: 0,
 	  threshold: 5,
 	  resistance: false,
@@ -29235,89 +29222,199 @@
 	    displayName: "ViewInformacion",
 	    render: function render() {
 	        return _react2.default.createElement(
-	            "main",
-	            { className: "view-info" },
+	            "div",
+	            null,
 	            _react2.default.createElement(
 	                "section",
-	                { className: "roww centerr info" },
+	                { className: "sectionInformation" },
 	                _react2.default.createElement(
-	                    "h1",
-	                    { className: "col-10  info-title" },
-	                    "¿QUE ES NODEZI?"
-	                ),
-	                _react2.default.createElement(
-	                    "article",
-	                    { className: "roww middlee around welcome" },
+	                    "div",
+	                    { className: "imagenInformacion", style: { height: '350px' } },
 	                    _react2.default.createElement(
-	                        "figure",
-	                        { className: "col-6  welcome-contentImage" },
-	                        _react2.default.createElement("img", { src: "asset/images/mocad.png", alt: "", width: "350px" })
-	                    ),
-	                    _react2.default.createElement(
-	                        "p",
-	                        { className: "col-6 welcome-info" },
-	                        "Bievenidos a Nodezi, Somos una empresa especializada en servicios y soluciones informaticas en el sector profesional. Nuestra especializacion se centra  en el desarrollo de software implementando las mejores tecnicas de seguridad."
+	                        "div",
+	                        { className: "row" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "text-center" },
+	                            _react2.default.createElement(
+	                                "h1",
+	                                null,
+	                                "¿Que es Nodezi?"
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "large-5 columns", style: { marginTop: '-30px' } },
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "show-for-medium" },
+	                                    _react2.default.createElement("img", { src: "asset/images/mocad.png", alt: "", width: "280px" })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "large-7 columns" },
+	                                _react2.default.createElement(
+	                                    "p",
+	                                    { className: "welcome-info" },
+	                                    "Bievenidos a Nodezi, Somos una empresa especializada en servicios y soluciones informaticas en el sector profesional. Nuestra especializacion se centra  en el desarrollo de software implementando las mejores tecnicas de seguridad."
+	                                )
+	                            )
+	                        )
 	                    )
 	                )
 	            ),
 	            _react2.default.createElement(
 	                "section",
-	                { className: "roww  centerr diferences" },
+	                { className: "sectionInformationDife" },
 	                _react2.default.createElement(
-	                    "h2",
-	                    { className: "col-10 diferences-title" },
-	                    "¿QUE NOS HACE DIFERENTE?"
-	                ),
-	                _react2.default.createElement(
-	                    "ul",
-	                    { className: "col-9 startt  diferences-list" },
+	                    "div",
+	                    { className: "row" },
 	                    _react2.default.createElement(
-	                        "li",
-	                        { className: "icon-pencil" },
-	                        "Software a la medida"
-	                    ),
-	                    _react2.default.createElement(
-	                        "li",
-	                        { className: "icon-pencil" },
-	                        "Seguridad de la informacion "
-	                    ),
-	                    _react2.default.createElement(
-	                        "li",
-	                        { className: "icon-pencil" },
-	                        "Sin costo de mantenimiento"
-	                    ),
-	                    _react2.default.createElement(
-	                        "li",
-	                        { className: "icon-pencil" },
-	                        "Mejor experiencia del usuario(UX)"
-	                    ),
-	                    _react2.default.createElement(
-	                        "li",
-	                        { className: "icon-pencil" },
-	                        "Mejor interfaz grafica(UI)"
-	                    ),
-	                    _react2.default.createElement(
-	                        "li",
-	                        { className: "icon-pencil" },
-	                        "Compromiso con el cliente"
+	                        "div",
+	                        { className: "text-center", style: { padding: '20px' } },
+	                        _react2.default.createElement(
+	                            "h1",
+	                            { className: "diferences-title" },
+	                            "¿Que nos hace diferente?"
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "row" },
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "row small-up-1 medium-up-3 large-up-3" },
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "columns" },
+	                                    _react2.default.createElement("img", { src: "https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863", alt: "Escaneo vuln" }),
+	                                    _react2.default.createElement(
+	                                        "p",
+	                                        null,
+	                                        "Software a Medida"
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "small",
+	                                        null,
+	                                        "El escaneo es la parte donde encontramos la mayor cantidad de vulnerabilidades."
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "columns" },
+	                                    _react2.default.createElement("img", { src: "https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863", alt: "Escaneo vuln" }),
+	                                    _react2.default.createElement(
+	                                        "p",
+	                                        null,
+	                                        "Mejor Experiencia de Usuario"
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "columns" },
+	                                    _react2.default.createElement("img", { src: "https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863", alt: "Escaneo vuln" }),
+	                                    _react2.default.createElement(
+	                                        "p",
+	                                        null,
+	                                        "Mejor Interfaz Grafica"
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "columns" },
+	                                    _react2.default.createElement("img", { src: "https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863", alt: "Escaneo vuln" }),
+	                                    _react2.default.createElement(
+	                                        "p",
+	                                        null,
+	                                        "Compromiso con el cliente"
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "columns" },
+	                                    _react2.default.createElement("img", { src: "https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863", alt: "Escaneo vuln" }),
+	                                    _react2.default.createElement(
+	                                        "p",
+	                                        null,
+	                                        "Testing De hacking"
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "columns" },
+	                                    _react2.default.createElement("img", { src: "https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863", alt: "Escaneo vuln" }),
+	                                    _react2.default.createElement(
+	                                        "p",
+	                                        null,
+	                                        "Seo y posicionamiento"
+	                                    )
+	                                )
+	                            )
+	                        )
 	                    )
 	                )
 	            ),
 	            _react2.default.createElement(
-	                "section",
-	                { className: "roww centerr we" },
+	                "main",
+	                { className: "view-info" },
 	                _react2.default.createElement(
-	                    "h2",
-	                    { className: "col-10  we-title" },
-	                    "¿QUIENES SOMOS?"
+	                    "section",
+	                    { className: "roww  centerr diferences" },
+	                    _react2.default.createElement(
+	                        "h2",
+	                        { className: "col-10 diferences-title" },
+	                        "¿QUE NOS HACE DIFERENTE?"
+	                    ),
+	                    _react2.default.createElement(
+	                        "ul",
+	                        { className: "col-9 startt  diferences-list" },
+	                        _react2.default.createElement(
+	                            "li",
+	                            { className: "icon-pencil" },
+	                            "Software a la medida"
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            { className: "icon-pencil" },
+	                            "Seguridad de la informacion "
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            { className: "icon-pencil" },
+	                            "Sin costo de mantenimiento"
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            { className: "icon-pencil" },
+	                            "Mejor experiencia del usuario(UX)"
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            { className: "icon-pencil" },
+	                            "Mejor interfaz grafica(UI)"
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            { className: "icon-pencil" },
+	                            "Compromiso con el cliente"
+	                        )
+	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "article",
-	                    { className: "roww centerr we-info" },
+	                    "section",
+	                    { className: "roww centerr we" },
 	                    _react2.default.createElement(
-	                        "p",
-	                        { className: "col-8" },
-	                        "Somos un grupo de jovenes, emprendedores e innovadores, apasionados por la tecnologia informatica y seguridad informatica y dar soluciones informatica."
+	                        "h2",
+	                        { className: "col-10  we-title" },
+	                        "¿QUIENES SOMOS?"
+	                    ),
+	                    _react2.default.createElement(
+	                        "article",
+	                        { className: "roww centerr we-info" },
+	                        _react2.default.createElement(
+	                            "p",
+	                            { className: "col-8" },
+	                            "Somos un grupo de jovenes, emprendedores e innovadores, apasionados por la tecnologia informatica y seguridad informatica y dar soluciones informatica."
+	                        )
 	                    )
 	                )
 	            )
@@ -29439,7 +29536,7 @@
 	                                { className: 'row  section-usuario' },
 	                                _react2.default.createElement(
 	                                    'div',
-	                                    { className: 'large-5 large-push-2 columns' },
+	                                    { className: 'large-5 large-push-3 columns' },
 	                                    _react2.default.createElement('img', { src: 'asset/images/usuario.png' })
 	                                ),
 	                                _react2.default.createElement(
@@ -29481,9 +29578,50 @@
 	                            _reactResponsive2.default,
 	                            { minWidth: 641 },
 	                            _react2.default.createElement(
-	                                'h1',
+	                                'div',
 	                                { className: 'hide-for-large' },
-	                                'JORGE'
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'row table-usuario' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'medium-3 medium-push-2 columns' },
+	                                        _react2.default.createElement('img', { src: 'asset/images/usuario.png' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'medium-9 columns table-UsuarioQuestion' },
+	                                        _react2.default.createElement(
+	                                            'label',
+	                                            { className: 'table-User' },
+	                                            'Usuario'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'label',
+	                                            { className: 'table-Question' },
+	                                            elem.Pregunta
+	                                        )
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'row table-answer' },
+	                                    _react2.default.createElement('img', { src: 'asset/images/admin.png' }),
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'medium-9  columns table-AdminContentAnswer' },
+	                                        _react2.default.createElement(
+	                                            'label',
+	                                            { className: 'table-Admin' },
+	                                            'Admin'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'label',
+	                                            { className: 'table-AdminAnswer' },
+	                                            elem.Respuesta
+	                                        )
+	                                    )
+	                                )
 	                            )
 	                        ),
 	                        _react2.default.createElement(
