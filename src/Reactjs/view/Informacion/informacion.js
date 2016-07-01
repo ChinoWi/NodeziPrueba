@@ -15,7 +15,6 @@ const ViewInformacion=React.createClass({
                                     <div className="show-for-medium">
                                         <img src="asset/images/mocad.png" alt="" width="280px"/>
                                     </div>
-
                                 </div>
                                 <div className="large-7 columns">
                                     <p className="welcome-info">Bievenidos a Nodezi, Somos una empresa especializada en servicios y soluciones
@@ -32,54 +31,71 @@ const ViewInformacion=React.createClass({
                             <h1 className="diferences-title">¿Que nos hace diferente?</h1>
                             <div className="row">
                                 <div className="row small-up-1 medium-up-3 large-up-3">
-                                    <div className="columns">
-                                        <img src="https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863" alt="Escaneo vuln"/>
-                                        <p>Software a Medida</p>
-                                        <small>El escaneo es la parte donde encontramos la mayor cantidad de vulnerabilidades.</small>
+                                    <div className="columns" style={{padding:'10px'}}>
+                                        <div className="row">
+                                            <img src="asset/images/software-medida1.png" style={{height:'170px'}} alt="Escaneo vuln"/>
+                                        </div>
+                                        <div className="row">
+                                            <p className="title">Software a Medida</p>
+                                            <small>No tienes nada que hacer. El desarrollo ya .</small>
+                                        </div>
                                     </div>
-                                    <div className="columns">
-                                        <img src="https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863" alt="Escaneo vuln"/>
-                                        <p>Mejor Experiencia de Usuario</p>
+                                    <div className="columns" style={{padding:'10px'}}>
+                                        <div className="row">
+                                            <img src="asset/images/ux.png" style={{height:'170px'}} alt="Escaneo vuln"/>
+                                        </div>
+                                       <div className="row">
+                                           <p>Mejor Experiencia de Usuario</p>
+                                           <small>sdfsdfsdfds</small>
+                                       </div>
                                     </div>
-                                    <div className="columns">
-                                        <img src="https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863" alt="Escaneo vuln"/>
+                                    <div className="columns" style={{padding:'10px'}}>
+                                        <img src="asset/images/ui.png" style={{height:'180px'}} alt="Escaneo vuln"/>
                                         <p>Mejor Interfaz Grafica</p>
+                                        <small>sdfsdfsdfds</small>
                                     </div>
-                                    <div className="columns">
-                                        <img src="https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863" alt="Escaneo vuln"/>
-                                        <p>Compromiso con el cliente</p>
+                                    <div className="columns" style={{padding:'10px'}}>
+                                        <div className="row">
+                                            <img src="asset/images/compromiso.png" style={{height:'170px'}} alt="Escaneo vuln"/>
+                                        </div>
+                                        <div className="row">
+                                            <p>Compromiso con el cliente</p>
+                                            <small>sdfsdfsdfds</small>
+                                        </div>
                                     </div>
-                                    <div className="columns">
-                                        <img src="https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863" alt="Escaneo vuln"/>
-                                        <p>Testing De hacking</p>
+                                    <div className="columns" style={{padding:'10px'}}>
+                                        <div className="row">
+                                            <img src="asset/images/testing.png" style={{height:'170px'}} alt="Escaneo vuln"/>
+                                        </div>
+                                        <div className="row">
+                                            <p>Testing De hacking</p>
+                                            <small>sdfsdfsdfds</small>
+                                        </div>
                                     </div>
-                                    <div className="columns">
-                                        <img src="https://d2vvexhncceim6.cloudfront.net/courses/icons/000/000/078/small/Escaneo_Vuln.png?1457905863" alt="Escaneo vuln"/>
-                                        <p>Seo y posicionamiento</p>
+                                    <div className="columns" style={{padding:'10px'}}>
+                                        <div className="row">
+                                            <img src="asset/images/seo.png" style={{height:'170px'}} alt="Escaneo vuln"/>
+                                        </div>
+                                        <div className="row">
+                                            <p>Seo y posicionamiento</p>
+                                            <small>sdfsdfsdfds</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr/>
+                    <h2 className="col-10  we-title">¿QUIENES SOMOS?</h2>
+                    <article className="roww centerr we-info">
+                        <p className="col-8">Somos un grupo de jovenes, emprendedores e innovadores, apasionados por la tecnologia informatica y seguridad informatica y dar soluciones informatica.</p>
+                    </article>
                 </section>
 
+
                 <main className="view-info">
-                    <section className="roww  centerr diferences">
-                        <h2 className="col-10 diferences-title">¿QUE NOS HACE DIFERENTE?</h2>
-                        <ul className="col-9 startt  diferences-list">
-                            <li className="icon-pencil">Software a la medida</li>
-                            <li className="icon-pencil">Seguridad de la informacion </li>
-                            <li className="icon-pencil">Sin costo de mantenimiento</li>
-                            <li className="icon-pencil">Mejor experiencia del usuario(UX)</li>
-                            <li className="icon-pencil">Mejor interfaz grafica(UI)</li>
-                            <li className="icon-pencil">Compromiso con el cliente</li>
-                        </ul>
-                    </section>
                     <section className="roww centerr we">
-                        <h2 className="col-10  we-title">¿QUIENES SOMOS?</h2>
-                        <article className="roww centerr we-info">
-                            <p className="col-8">Somos un grupo de jovenes, emprendedores e innovadores, apasionados por la tecnologia informatica y seguridad informatica y dar soluciones informatica.</p>
-                        </article>
+
                     </section>
                 </main>
             </div>
