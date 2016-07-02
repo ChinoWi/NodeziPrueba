@@ -24,17 +24,12 @@ class ViewPreguntas  extends React.Component {
   }
 
   render(){
-    if(this.state.data.length > 0){
-        return (
+      return (
             <section className="section">  
                 <Question question = {this.state.data} /> 
             </section>
         )
     }
-    else{
-        return  <p>Cargando Preguntas</p>
-    }
-  }
   
 }
 

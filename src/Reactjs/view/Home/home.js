@@ -136,10 +136,10 @@ const ViewHome=React.createClass({
                             </div>
                         </div>
                     </section>
-                    <section style={{background:'#00BCD4'}}>
+                    <section style={{background:'#FCFAF9'}}>
                         <div className="text-center" style={{padding:'20px'}}>
                             ¿Quienes Somos?
-                            <Link to="/Informacion" className="secondary button" style={{margin:'5px'}}>Mas informacion</Link>
+                            <Link to="/Informacion" className="button" style={{margin:'5px'}}>Mas informacion</Link>
                         </div>
                     </section>
                     <section id="sectionSlider">

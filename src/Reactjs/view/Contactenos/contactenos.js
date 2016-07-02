@@ -268,7 +268,7 @@ const ViewContactenos=React.createClass({
                 mensajeError:'Ingrese correcamente los campos.',
                 mostrarMensajeDisplay:'block',
 
-                value:0,
+                valor:0,
                 textNombreFirebase:'',
                 textEmailFirebase:'',
                 textTextareaFirebase:''
