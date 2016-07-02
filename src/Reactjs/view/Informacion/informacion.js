@@ -37,11 +37,9 @@ const ViewInformacion=React.createClass({
                                     </div>
                                 </div>
                                 <div className="medium-7 large-7 columns">
-                                    <div className="text-left">
-                                        <h5 className="welcome-info">Bievenidos a Nodezi, Somos una empresa especializada en servicios y soluciones
-                                            informaticas en el sector profesional. Nuestra especializacion se centra  en el desarrollo de software
-                                            implementando las mejores tecnicas de seguridad.</h5>
-                                    </div>
+                                    <p className="welcome-info">Bievenidos a Nodezi, Somos una empresa especializada en servicios y soluciones
+                                        informaticas en el sector profesional. Nuestra especializacion se centra  en el desarrollo de software
+                                        implementando las mejores tecnicas de seguridad.</p>
                                 </div>
                             </div>
                         </div>
@@ -122,12 +120,13 @@ const ViewInformacion=React.createClass({
                             </div>
                         </div>
                     </div>
+
                 </section>
                 <section className="sectionInformationQ">
                     <div className="text-center">
-                        <h1 className="diferences-titleq">¿Quienes Somos?</h1>
-                        <h5>Somos un grupo de jovenes, emprendedores e innovadores, apasionados por la tecnologia
-                            informatica y seguridad informatica y dar soluciones informatica.</h5>
+                        <h1 className="diferences-title">¿Quienes Somos?</h1>
+                        <p>Somos un grupo de jovenes, emprendedores e innovadores, apasionados por la tecnologia
+                            informatica y seguridad informatica y dar soluciones informatica.</p>
                     </div>
                 </section>
 
