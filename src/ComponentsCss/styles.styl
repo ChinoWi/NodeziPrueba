@@ -157,14 +157,167 @@
   &:before
     content "\ea9d"
 
+* {
+  outline: 0;
+}
 
 body
-	background #EDF0F5
+	background #ECEFF1
 
-.header
-	background blue
-	&-contentImage
-		margin 0
+.headerr
+  position: fixed;
+  background: #FFF;
+  width: 100%;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid #cfd8dc;
+  transition: all .3s ease-in-out;
+
+.headerr img
+  display: block;
+  width: 180px;
+  height 50px
+
+.headerr .input-wrapper
+  position relative
+
+.right
+  float: right!important;
+
+.fa-search
+  position: absolute;
+  font-size: 22px;
+  top: 11px;
+  left: 6px;
+  color: #607D8B;
+  z-index: 9;
+
+.mdi
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(0,0);
+
+.mdi-magnify:before
+  content: "\f401";
+
+.headerr .input-wrapper input {
+  position: relative;
+  z-index: 10;
+  height: auto;
+  margin: 5px 0 0;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: 0 0;
+  border-bottom: 1px solid transparent;
+  font-size: 16px;
+  padding: 6px 28px 6px 34px;
+  display: inline-block;
+  width: 200px;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  font-weight: 700;
+  color: #546E7A;
+}
+
+
+.content-row
+  position: relative;
+  background: #eceff1;
+  padding-top 80px
+
+@media screen and (max-width: 639.0px)
+  .content-row
+    margin-top 118px
+    border 1px solid red
+
+@media only screen and (min-width: 1025px)
+  .column, .columns
+    position relative
+    padding-left .9375rem
+    padding-right .9375rem
+    float left
+
+
+@media only screen and (min-width: 641px)
+  .medium-4
+    width 33.33333%
+  .medium-8
+    width 66.66667%
+
+
+
+.header1 .top-bar
+  background white
+  box-shadow 0 2px 3px -2px
+  height 44px
+
+.header1 .topbarDesktop
+  background white
+  height 70px
+
+.header1 .contentBarDesktopLeft
+  margin-left 50px
+
+.header1 .contentBarDesktopRight
+  margin-right 50px
+
+
+.top-bar .content-top-bar
+  height 40px
+  margin-top -7px
+
+.content-top-bar-large
+  height 20px
+
+
+.content-top-bar .smallLogo
+  height 39px
+
+
+.content-top-bar .smallBuscar
+  margin-top 8px
+  height 25px
+
+.content-top-bar .smallMenu
+  margin-top 13px
+  height 17px
+
+.header1 .icon-topbar
+  margin 8px
+
+header .sombraLine
+  padding 1px
+
+#formBuscar .container-3
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+
+
+.container-3 input#search
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+show-for-mediumnav
+  color: #65737e;
 
 .nav
   background #005995

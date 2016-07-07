@@ -1,3 +1,35 @@
+.sectionPreguntas
+	background #EEEEEE
+
+.sectionPreguntas .row
+	margin 10px
+
+.row .card
+	background white
+	border-radius 5px
+
+	&-item
+		margin 20px
+		&-mostrar
+			color #005995
+			cursor pointer
+		&-imgAdmin
+			text-align center
+
+@media screen and (max-width: 39.9375em)
+	.row .card
+		&-item
+			&-alinear
+				text-align center
+			&-imgAdmin
+				height 90px
+
+@media screen and (min-width: 40em)
+	.row .card
+		&-item
+			&-imgAdmin
+				height 70px
+
 .section
 	background white
 	// margin 0 21%

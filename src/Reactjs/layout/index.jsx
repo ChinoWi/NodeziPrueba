@@ -125,12 +125,71 @@ const App=React.createClass({
     render(){
         return(
             <div>
+                <div className="body-container">
+                    <header className="headerr">
+                        <div className="row">
+                            <div className="small-12 medium-4 columns">
+                                <Link to="/">
+                                    <img src="asset/images/logo.png" alt=""/>
+                                </Link>
+                            </div>
+                            <div className="small-12 medium-2 columns">
+                                <div className="input-wrapper right">
+                                    <i className="fa fa-search mdi mdi-magnify"></i>
+                                    <input type="text" className="search-box" placeholder="Search Hashnode"/>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div className="content-row">
+                        <div className="row">
+                            <div className="medium-2 hide-for-small-only">
+                                <h1>dsfsadf</h1>
+                                <h1>sdfsdf</h1>
+                                <h1>sdfsdf</h1>
+                                <h1>dsfsadf</h1>
+                                <h1>sdfsdf</h1>
+                                <h1>sdfsdf</h1>
+                            </div>
+                            sdf
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
                 <Header1></Header1>
                 <MenuNav></MenuNav>
                 {this.props.children}
-                <Footer></Footer>
+                
             </div>
         );
     }
 });
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

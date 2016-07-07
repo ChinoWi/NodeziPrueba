@@ -2,128 +2,102 @@ import React from 'react'
 import MediaQuery from 'react-responsive'
 
 
-class ViewPreguntas  extends React.Component {
+const Respuestas=React.createClass({
+    render(){
+        return(
+            <div className="row">
+                <div className="medium-3 large-2 columns">
+                    <div className="card-item-alinear">
+                        <img className="card-item-imgAdmin" src="asset/images/admin-item.png" alt=""/>
+                    </div>
 
-  constructor(props) {
-    super(props)
-    this.state = {
-        data: []
-    }
-  }
-
-  componentWillMount(){
-    fetch('src/Reactjs/view/data.json')
-     .then((response) => {
-         return response.json()
-     })
-     .then((data) => {
-        this.setState({
-            data:data
-        })
-     })
-  }
-
-  render(){
-    if(this.state.data.length > 0){
-        return (
-            <section className="section">  
-                <Question question = {this.state.data} /> 
-            </section>
-        )
-    }
-    else{
-        return  <p>Cargando Preguntas</p>
-    }
-  }
-  
-}
-
-class Question extends React.Component {
-  
-  constructor(){
-     super();
-  } 
-
-  render(){
-    return(
-           <div> 
-                <div className="row Frequently">
-                       <h4 className="large-12  text-center columns">Preguntas Frecuentes</h4>
                 </div>
-                {
-                this.props.question.map((elem)=>{
-                   return (
-                     <article className="section-article"  key={elem.key}>
+                <div className="medium-9 large-10 columns" >
+                    <h6>{this.props.respuesta}</h6>
+                </div>
+            </div>
+        );
+    }
+});
 
-                     <MediaQuery minWidth={1024}>
-                        <div className="row  section-usuario"> 
-                            <div className="large-5 large-push-2 columns">  
-                              <img src="asset/images/usuario.png"/>
-                            </div>
-                            <div className="large-7 columns section-UsuarioQuestion">
-                                <label className="section-User">Usuario</label>   
-                                <label className="section-Question">{elem.Pregunta}</label>
-                            </div>
-                        </div>
-                        <div className="row section-answer">
-                                 <img src="asset/images/admin.png"/>
-                               <div className="large-12  column section-AdminContentAnswer">  
-                                <label className="section-Admin">Admin</label>
-                                <label className="section-AdminAnswer">{elem.Respuesta}</label>
-                               </div>
-                        </div>
-                     </MediaQuery>
+const Preguntas=React.createClass({
+    getInitialState(){
+        return{
+            showRespuesta:false,
+            showMostrar:'MOSTRAR'
+            
 
-                     <MediaQuery minWidth={641}>
-                        <div className="hide-for-large">
-                        <div className="row table-usuario"> 
-                            <div className="medium-3 medium-push-2 columns">  
-                              <img src="asset/images/usuario.png"/>
-                            </div>
-                            <div className="medium-9 columns table-UsuarioQuestion">
-                                <label className="table-User">Usuario</label>   
-                                <label className="table-Question">{elem.Pregunta}</label>
-                            </div>
+        }
+    },
+    handleClickMostrar(){
+        this.setState({
+            showRespuesta:!this.state.showRespuesta,
+            showMostrar:!this.state.showMostrar
+        })
+    },
+    render(){
+        return(
+            <div className="card-item">
+                <div className="row columns text-left">
+                    <div className="medium-2 large-2 columns">
+                        <img src={this.props.imgUrl} alt=""/>
+                    </div>
+                    <div className="medium-10 large-10 columns" >
+                        <div style={{borderBottom:'2px solid #EDECE8'}}>
+                            <h5>{this.props.pregunta} </h5>
+                            <h5><small>Presione Mostrar para ver la respuesta</small></h5>
+                            <h6 className="card-item-mostrar" onClick={this.handleClickMostrar}>{this.state.showMostrar ? "MOSTRAR" : "OCULTAR"} </h6>
                         </div>
-                        <div className="row table-answer">
-                                 <img src="asset/images/admin.png"/>
-                               <div className="medium-9  columns table-AdminContentAnswer">  
-                                <label className="table-Admin">Admin</label>
-                                <label className="table-AdminAnswer">{elem.Respuesta}</label>
-                               </div>
-                        </div>
-                       </div>
-                     </MediaQuery>
+                        {this.state.showRespuesta ? <Respuestas respuesta={this.props.respuesta} ></Respuestas> : null}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+});
 
-                     <MediaQuery maxWidth={640}>
-                        <div className="row hide-for-medium  mobile-user"> 
-                            <div className="small-6 small-push-2 columns mobile-ContentUser">  
-                              <img src="asset/images/usuario.png"/>
-                            </div>
-                            <div className="small-6 columns">
-                                <label className="mobile-usuario">Usuario</label>   
-                                <label className="mobile-question">{elem.Pregunta}</label>
-                            </div>
-                        </div>
-                        <div className="linea"></div>
-                        <div className="row mobile-admin">
-                                <img src="asset/images/admin.png"/>
-                               <div className="small-12  column section-AdminContentAnswer">  
-                                <label className="mobile-administrador">Admin</label>
-                                <label className="mobile-answer">{elem.Respuesta}</label>
-                               </div>
-                        </div>
-                    </MediaQuery>
-                     </article>
-                  ) 
-                })
-              }
-           </div>            
-        ) 
- 
-  }  
- 
-}
+const ViewPreguntas= React.createClass({
+    getInitialState(){
+        return{
+            Datos:[
+                {key:1,pregunta:'Cuantos cuestan tus servicios?',imgUrl:'asset/images/user-item.png',respuesta:"Nuestra plataforma se creo con el fin de brindar un buen servicio siempre considerando al cliente de una manera justa, y sacando a produccion un producto 100% usable."},
+                {key:2,pregunta:'Tiempo para entregar el Proyecto?',imgUrl:'asset/images/user-item1.png',respuesta:"Dependiendo del proyecto, Nosotros utilizamos tecnologias y herramientas que ayudan ha optimizar el proceso de desarrollo."},
+                {key:3,pregunta:'Sera Responsive mi proyecto?',imgUrl:'asset/images/user-item2.png',respuesta:"Si, cada proyecto iniamos con mobile first(Primero Mobile, luego Tablet y por utlimo Desktop)."},
+                {key:4,pregunta:'Tendre que dar un adelanto?',imgUrl:'asset/images/user-item3.png',respuesta:"Será el porcentage minimo como garantia pero a cambio tendra derecho a exigir un avance posterior a dos semanas."},
+                {key:5,pregunta:'Tendre soporte para mi proyecto?',imgUrl:'asset/images/user-item4.png',respuesta:"Si, estaremos pendiente ante algun cambio o duda que tenga de tu producto."},
+                {key:6,pregunta:'Mi proyecto sera vulnerables ante ataques de Hackers?',imgUrl:'asset/images/user-item5.png',respuesta:"Nuestro Team tenemos personas que se dedican especialmente al rublo de la seguridad informatica, haciendo un pentest a la aplicacion para posibles fallos de seguridad y entregar un producto mas seguro."},
+                {key:7,pregunta:'Como podre contactarme con ustedes durane el desarrollo de mi proyecto?',imgUrl:'asset/images/user-item6.png',respuesta:"Contamos con Soporte en Correo, Via telefonica, Redes sociales, Contacto en Nuestro plataforma, Presencial si vive cerca, skype."},
+                {key:8,pregunta:'Es necesario vernos presencial para conversar sobre el proyecto?',imgUrl:'asset/images/user-item7.png',respuesta:"Depende de la distancia en el cual nos encontremos, si hay posibilidades no hay duda en vernos."},
+            ]
+        }
+    },
+
+    eachItem(item){
+        return(
+            <Preguntas key={item.key}
+                       pregunta={item.pregunta}
+                       imgUrl={item.imgUrl}
+                       respuesta={item.respuesta}
+            >
+
+            </Preguntas>
+        );
+    },
+    render(){
+        return(
+            <section className="sectionPreguntas">
+                <div className="row">
+                    <div className="medium-1 large-2 columns" style={{border:'1px solid #EEEEEE'}}></div>
+                    <div className="medium-10 large-8 columns card">
+                        <h4>Preguntas</h4>
+                        {this.state.Datos.map(this.eachItem)}
+                    </div>
+                    <div className="medium-1 large-2 columns" style={{border:'1px solid #EEEEEE'}}></div>
+                </div>
+            </section>
+        );
+    }
+});
 
 export default ViewPreguntas
 

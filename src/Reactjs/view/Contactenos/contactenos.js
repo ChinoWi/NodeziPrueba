@@ -66,7 +66,14 @@ const ViewContactenos=React.createClass({
             showContacto:'block',
             showMensaje:'none',
 
-            background:'#2BA6CB'
+            background:'#FAFAFA',
+            borderInput:'1px solid #757575',
+            bordererror:'1px solid #E91E63',
+            bordersuccess:'1px solid #2196F3',
+
+            iconItem1:'asset/images/icon_item1.png',
+            iconItem2:'asset/images/icon_item2.png',
+            iconItem3:'asset/images/icon_item3.png',
         };
     },
 
@@ -84,24 +91,24 @@ const ViewContactenos=React.createClass({
         this.setState({
             textNombreFirebase:valorNombre
         });
-        if(this.validateNombre(valorNombre) && valorNombre.length>=3 && valorNombre!=''){
+        if(this.validateNombre(valorNombre) && valorNombre.length>3 && valorNombre!=''){
             this.setState({
                 mostrarMensajeDisplay:'none'
             });
             if(this.state.valor==0){
                 value=32;
-                this.setState({valor:value,mensajeNombre:'Correct'})
+                this.setState({valor:value,mensajeNombre:'Correct',iconItem1:'asset/images/icon_success.png'})
             }if(this.state.valor==33){
                 value=65;
-                this.setState({valor:value,mensajeNombre:'Correct'})
+                this.setState({valor:value,mensajeNombre:'Correct',iconItem1:'asset/images/icon_success.png'})
             }
             if(this.state.valor==35){
                 value=67;
-                this.setState({valor:value,mensajeNombre:'Correct'})
+                this.setState({valor:value,mensajeNombre:'Correct',iconItem1:'asset/images/icon_success.png'})
             }
             if(this.state.valor==68){
                 value=100;
-                this.setState({valor:value,mensajeNombre:'Correct'})
+                this.setState({valor:value,mensajeNombre:'Correct',iconItem1:'asset/images/icon_success.png'})
             }
         }if(valorNombre.length<=3 ){
             if(this.state.valor==0)
@@ -115,7 +122,8 @@ const ViewContactenos=React.createClass({
             else{
                 value=value-32;
                 this.setState({
-                    mensajeNombre:'Min 4 caracteres, letras'
+                    mensajeNombre:'Min 4 caracteres, letras',
+                    iconItem1:'asset/images/icon_error.png'
                 });
             }
         }
@@ -143,18 +151,18 @@ const ViewContactenos=React.createClass({
             });
             if(this.state.valor==0){
                 value=33;
-                this.setState({valor:value,mensajeEmail:'Correct'})
+                this.setState({valor:value,mensajeEmail:'Correct',iconItem2:'asset/images/icon_success.png'})
             }if(this.state.valor==32){
                 value=65;
-                this.setState({valor:value,mensajeEmail:'Correct'})
+                this.setState({valor:value,mensajeEmail:'Correct',iconItem2:'asset/images/icon_success.png'})
             }
             if(this.state.valor==35){
                 value=68;
-                this.setState({valor:value,mensajeEmail:'Correct'})
+                this.setState({valor:value,mensajeEmail:'Correct',iconItem2:'asset/images/icon_success.png'})
             }
             if(this.state.valor==67){
                 value=100;
-                this.setState({valor:value,mensajeEmail:'Correct'})
+                this.setState({valor:value,mensajeEmail:'Correct',iconItem2:'asset/images/icon_success.png'})
             }
         }else{
             if(this.state.valor==0)
@@ -168,7 +176,8 @@ const ViewContactenos=React.createClass({
             else{
                 value=value-33;
                 this.setState({
-                    mensajeEmail:'Ingrese email valido'
+                    mensajeEmail:'Ingrese email valido',
+                    iconItem2:'asset/images/icon_error.png'
                 });
             }
         }
@@ -194,20 +203,20 @@ const ViewContactenos=React.createClass({
             });
             if(this.state.valor==0){
                 value=35;
-                this.setState({valor:value,mensajeTextarea:'Correct'})
+                this.setState({valor:value,mensajeTextarea:'Correct',iconItem3:'asset/images/icon_success.png'})
             }if(this.state.valor==32){
                 value=67;
-                this.setState({valor:value,mensajeTextarea:'Correct'})
+                this.setState({valor:value,mensajeTextarea:'Correct',iconItem3:'asset/images/icon_success.png'})
             }
             if(this.state.valor==33){
                 value=68;
-                this.setState({valor:value,mensajeTextarea:'Correct'})
+                this.setState({valor:value,mensajeTextarea:'Correct',iconItem3:'asset/images/icon_success.png'})
             }
             if(this.state.valor==65){
                 value=100;
-                this.setState({valor:value,mensajeTextarea:'Correct'})
+                this.setState({valor:value,mensajeTextarea:'Correct',iconItem3:'asset/images/icon_success.png'})
             }
-        }if(valorTextarea.length<=5 ){
+        }if(valorTextarea.length<5 ){
             if(this.state.valor==0)
                 value=0;
             else if(this.state.valor==32)
@@ -219,7 +228,8 @@ const ViewContactenos=React.createClass({
             else{
                 value=value-35;
                 this.setState({
-                    mensajeTextarea:'Min 6 caracteres'
+                    mensajeTextarea:'Min 6 caracteres',
+                    iconItem3:'asset/images/icon_error.png'
                 });
             }
         }
@@ -268,7 +278,7 @@ const ViewContactenos=React.createClass({
                 mensajeError:'Ingrese correcamente los campos.',
                 mostrarMensajeDisplay:'block',
 
-                value:0,
+                valor:0,
                 textNombreFirebase:'',
                 textEmailFirebase:'',
                 textTextareaFirebase:''
@@ -286,85 +296,81 @@ const ViewContactenos=React.createClass({
             textEmailFirebase:'',
             textTextareaFirebase:'',
 
-            background:'#2BA6CB'
+            background:'#FAFAFA',
+
+            iconItem1:'asset/images/icon_item1.png',
+            iconItem2:'asset/images/icon_item2.png',
+            iconItem3:'asset/images/icon_item3.png'
         });
     },
     render(){
         return(
-            <div  style={{background:this.state.background,paddingTop:'20px'}}>
+            <div  style={{background:this.state.background}}>
 
                 {this.state.mostrarSucces ? <SuccesMensaje nombre={this.state.showMensajeNombre} retorna={this.retornarContacto} styleMostrar={this.state.showMensaje} ></SuccesMensaje> :null  }
 
                 <div className="text-center" style={{display:this.state.showContacto}}>
-                    <h2 style={{color:'white '}}>Contactenos</h2>
-                    <div className="row">
-                        <div className="text-center" style={{color:'#DDDDDD'}}>
-                            <div className="large-1 columns" style={{border:'1px solid #2BA6CB'}}></div>
-                            <div className="large-4 columns">
-                                <div className="row" >
-                                    <div className="show-for-medium">
-                                        <div className="row">
-                                            <CircularProgress
-                                                strokeWidth="10"
-                                                radius="90"
-                                                percentage={this.state.valor}/>
-                                        </div>
-                                    </div>
-                                    <div className="row" style={{padding:'30px',color:'white'}}>
-                                        <div className="titulo">
-                                            <h4>Nodezi, Contacenos</h4>
-                                        </div>
-                                        <div>
-                                            sdasdasdasdasdasd
-                                        </div>
-                                    </div>
+
+                    <div className="show-for-small-only">
+                        <div className="row" style={{padding:'10px' ,background:'#2196F3'}}>
+                            <div className="small-2 columns text-center" style={{paddingTop:'10px'}}>
+                                <CircularProgress
+                                    strokeWidth="2"
+                                    radius="22"
+                                    percentage={this.state.valor}/>
+                            </div>
+                            <div className="small-10 columns text-left">
+                                <div style={{color:'white'}}>
+                                    <h5 style={{marginTop:'30px'}}>Request for contact</h5>
                                 </div>
                             </div>
-                            <div className="large-5 columns" >
-                                <div className="row" style={{paddingTop:'10px',background:'#49B5D5',marginBottom:'20px'}}>
-                                    <div style={{margin:'10px 30px 30px 30px'}}>
-                                        <div className="row">
-                                            <form className="formulario" >
-                                                <div className="row">
-                                                    <div className="large-8 columns">
-                                                        <input type="text"  name="nombre" value={this.state.textNombreFirebase}  onChange={this.onNombreChange} placeholder="Nombre" />
-                                                    </div>
-                                                    <div className="large-4 columns">
-                                                        <h5 className="text-left"><small>{this.state.mensajeNombre}</small></h5>
-                                                    </div>
-                                                </div>
-                                                <div className="row">
-                                                    <div className="large-8 columns">
-                                                        <input type="text" name="email" value={this.state.textEmailFirebase} onChange={this.onEmailChange} placeholder="Email" />
-                                                    </div>
-                                                    <div className="large-4 columns">
-                                                        <h5 className="text-left"><small>{this.state.mensajeEmail}</small></h5>
-                                                    </div>
-                                                </div>
-                                                <div className="row">
-                                                    <div className="large-8 columns">
-                                                        <textarea  onChange={this.onTextareaChange} value={this.state.textTextareaFirebase} placeholder="Escribe tu consulta"/>
-                                                    </div>
-                                                    <div className="large-4 columns">
-                                                        <h5 className="text-left"><small>{this.state.mensajeTextarea}</small></h5>
-                                                    </div>
-                                                </div>
-                                                <div className="row" style={{paddingTop:'20px'}}>
+                        </div>
+                        <form className="form">
+                            <div className="row" style={{paddingTop:'20px'}}>
+                                <div className="small-2 columns text-center" style={{color:'black'}}>
+                                    <img src={this.state.iconItem1} style={{height:'40px'}} alt=""/>
+                                </div>
+                                <div className="small-10 columns text-left">
+                                    <label>Nombres
+                                        <input type="text" style={{border:this.state.borderInput}}  name="nombre" value={this.state.textNombreFirebase}  onChange={this.onNombreChange} placeholder="Nombre" />
+                                    </label>
+                                    <p className="help-text">La contraseña debe tener al menos 3 caracteres.</p>
+                                </div>
+                            </div>
+                            <div className="row" style={{paddingTop:'20px'}}>
+                                <div className="small-2 columns text-center" style={{color:'black'}}>
+                                    <img src={this.state.iconItem2} style={{height:'40px'}} alt=""/>
+                                </div>
+                                <div className="small-10 columns text-left">
+                                    <label>Email
+                                        <input type="text" name="email" value={this.state.textEmailFirebase} onChange={this.onEmailChange} placeholder="Email" />
+                                    </label>
+                                    <p className="help-text">Your password must have at least 10 characters, a number, and an Emoji.</p>
+                                </div>
+                            </div>
+                            <div className="row" style={{paddingTop:'20px',paddingBottom:'20px'}}>
+                                <div className="small-2 columns text-center" style={{color:'black'}}>
+                                    <img src={this.state.iconItem3} style={{height:'40px'}} alt=""/>
+                                </div>
+                                <div className="small-10 columns text-left">
+                                    <label>Mensaje</label>
+                                    <textarea  onChange={this.onTextareaChange} value={this.state.textTextareaFirebase} placeholder="Escribe tu consulta"/>
+                                </div>
+                            </div>
+                            <div className="row" style={{paddingTop:'20px'}}>
                                                     <span style={{display:this.state.mostrarMensajeDisplay}}>
                                                         <div style={{background:'#C93434',border:'1px solid #A52B2B'}}>
                                                             <p>Error Ingrese Correctamente los campos</p>
                                                         </div>
                                                     </span>
-
-                                                    <button type="button" onClick={this.handleSubmit} className="button">Enviar</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button type="button" onClick={this.handleSubmit} className="button">Enviar</button>
                             </div>
-                            <div className="large-2 columns"  style={{border:'1px solid #2BA6CB'}}></div>
-                        </div>
+                        </form>
+
+
+                    </div>
+                    <div className="show-for-medium">
+                        <h2>Contactenos</h2>
                     </div>
                 </div>
             </div>
