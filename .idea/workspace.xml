@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e0d5713-053e-459d-b6d8-5ad57828688c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/css/styles.css" afterPath="$PROJECT_DIR$/asset/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ComponentsCss/styles.styl" afterPath="$PROJECT_DIR$/src/ComponentsCss/styles.styl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reactjs/layout/index.jsx" afterPath="$PROJECT_DIR$/src/Reactjs/layout/index.jsx" />
     </list>
     <ignored path="NodeziPrueba.iws" />
@@ -30,10 +28,10 @@
       <file leaf-file-name="preguntas.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            <state relative-caret-position="493">
+              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,11 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reactjs/layout/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="158" column="36" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
+            <state relative-caret-position="850">
+              <caret line="157" column="45" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="38" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -247,12 +255,12 @@
       <workItem from="1467643186024" duration="7730000" />
       <workItem from="1467818153926" duration="599000" />
       <workItem from="1467899413495" duration="16584000" />
-      <workItem from="1467917695225" duration="7641000" />
+      <workItem from="1467917695225" duration="8068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168178000" />
+    <option name="totallyTimeSpent" value="168605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -501,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -599,10 +600,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reactjs/view/Preguntas/preguntas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        <state relative-caret-position="493">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -625,8 +626,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reactjs/layout/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="158" column="36" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
+        <state relative-caret-position="850">
+          <caret line="157" column="45" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="38" />
           <folding />
         </state>
       </provider>

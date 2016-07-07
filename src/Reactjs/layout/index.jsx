@@ -194,7 +194,6 @@ const App=React.createClass({
 
                     <div className="content-row">
                         <div className="row">
-                            sdfsdfsd
                             <div className="medium-3 large-2 hide-for-small-only columns menu-left">
                                 <div className="menu-left-content" style={styles.menuNav}>
                                     <ul className="nav-list">
