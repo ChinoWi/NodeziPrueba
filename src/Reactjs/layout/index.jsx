@@ -92,34 +92,72 @@ const MenuItem = React.createClass({
 const Footer=React.createClass({
     render(){
         return(
-            <footer className="footer">
-                <div className="footer-main">
-                    <div className="footer-terms">
-                        <p className="terms-title">
-                            Desarrollo de Aplicaciones Web,Moviles y Servicios de Seguridad Informatica
-                        </p>
-    		<span className="terms-conditional">
-    			<a href="">Terminos y Condiciones</a>
-    		</span>
-                    </div>
-                    <div className="content-network">
-                        <p><a href="#" class="icon-twitter"></a></p>
-                        <p><a href="#" class="icon-facebook"></a></p>
-                        <p><a href="#" class="icon-skype"></a></p>
-                        <p><a href="#"class="icon-google"></a></p>
-                        <p><a href="#" class="icon-whatsapp"></a></p>
-                    </div>
-                </div>
-
-                <div className="content-rights">
-                    <p className="rights-title">
-                        Copyrigh@2016 Power by Nodezi
-                    </p>
-                </div>
-            </footer>
+          <div className="main-footer">
+              <div className="roww centerr middlee">
+                 <div className="col-6">
+                     <FooterContent/>
+                     <FooterTerminos/>
+                 </div>
+                 <div className="col-6">
+                     <FooterRedes/>
+                 </div>              
+              </div>
+              <div className="roww">
+                 <div className="col-12">
+                   <FooterCopy/> 
+                 </div>
+             </div>
+          </div>
         );
     }
 });
+
+
+ 
+const FooterContent=React.createClass({
+    render(){
+        return(
+           <p className="content">DESARROLLO DE APLICACIONES WEB Y MOVILES,SERVICIOS DE SEGURIDAD INFORMATICA</p> 
+        )
+    }  
+});
+
+
+const FooterTerminos = React.createClass({
+    render(){
+        return(
+             <span className="terminos">
+                 <a href="#">Terminos-Condiciones</a>              
+             </span>
+         )
+    }
+})
+
+
+const  FooterRedes = React.createClass({
+    render(){
+        return(
+           <p className="redess">
+             <a href="#"><i className="fa fa-facebook-square facebook" aria-hidden="true"></i></a>
+             <a href="#"><i className="fa fa-twitter-square twitter" aria-hidden="true"></i></a>
+             <a href="#"><i className="fa fa-google-plus-official google" aria-hidden="true"></i></a>
+             <a href="#"><i className="fa fa-skype skype" aria-hidden="true"></i></a>
+           </p>
+        )
+    }
+})
+
+
+const FooterCopy = React.createClass({
+    render(){
+        return(
+            <p className="copy">Copyright@2016 Power by Nodezi</p>
+        )
+    }
+})
+
+
+
 
 const App=React.createClass({
     render(){
@@ -157,10 +195,10 @@ const App=React.createClass({
                 </div>
 
                 <br/>
-                <Header1></Header1>
-                <MenuNav></MenuNav>
+                <Header1/>
+                <MenuNav/>
                 {this.props.children}
-                
+            
             </div>
         );
     }
