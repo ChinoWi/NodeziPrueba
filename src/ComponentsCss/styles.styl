@@ -76,16 +76,104 @@ body
   color: #546E7A;
 }
 
-
 .content-row
   position: relative;
   background: #eceff1;
   padding-top 80px
 
+//MENU LEFT NAV
+.menu-left
+  position relative
+  &-content
+    padding-top 20px
+
+.nav-list
+  list-style none
+  margin 0 0 24px
+
+.nav-list a
+  display: block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #78909C;
+  -webkit-border-radius: 0 2px 2px 0;
+  -moz-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+  border-left: 3px solid #eceff1;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+
+li a:hover
+  background #E5E9EC
+  border-left-color: #B0BEC5;
+
+li .active
+  border-left-color #00bcd4;
+  color: #455A64;
+  font-weight: 700;
+
+
+.nav-list a img
+  height: 18px;
+  width: 18px;
+  line-height: 1;
+  margin-right: 6px;
+  margin-top: -3px;
+
+a img
+  border: none;
+
+img
+   display: inline-block;
+
+
+
+
+//MENU NAV
+
+
+.list-nav li a
+  display: block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #78909C;
+  -webkit-border-radius: 0 2px 2px 0;
+  -moz-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+  border-left: 3px solid #eceff1;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content-column
+  padding-top: 20px;
+
+
+
+
+
+
 @media screen and (max-width: 639.0px)
   .content-row
-    margin-top 118px
-    border 1px solid red
+    padding-top 120px
 
 @media only screen and (min-width: 1025px)
   .column, .columns
@@ -93,7 +181,6 @@ body
     padding-left .9375rem
     padding-right .9375rem
     float left
-
 
 @media only screen and (min-width: 641px)
   .medium-4

@@ -12,6 +12,17 @@ const styles = {
     content: {
         padding: '16px',
     },
+
+
+    menuNav:{
+        zIndex: '1000',
+        position: 'fixed',
+        marginLeft: '0px',
+        width: '150px',
+        left: '45.3px',
+        maxWidth:'50%'
+
+    }
 };
 
 const Header1=React.createClass({
@@ -160,6 +171,7 @@ const FooterCopy = React.createClass({
 
 
 const App=React.createClass({
+
     render(){
         return(
             <div>
@@ -179,27 +191,58 @@ const App=React.createClass({
                             </div>
                         </div>
                     </header>
+
                     <div className="content-row">
                         <div className="row">
-                            <div className="medium-2 hide-for-small-only">
-                                <h1>dsfsadf</h1>
-                                <h1>sdfsdf</h1>
-                                <h1>sdfsdf</h1>
-                                <h1>dsfsadf</h1>
-                                <h1>sdfsdf</h1>
-                                <h1>sdfsdf</h1>
+                            sdfsdfsd
+                            <div className="medium-3 large-2 hide-for-small-only columns menu-left">
+                                <div className="menu-left-content" style={styles.menuNav}>
+                                    <ul className="nav-list">
+                                        <li>
+                                            <Link to="/" className="active">
+                                                <img src="https://res.cloudinary.com/hashnode/image/upload/v1450381587/static_imgs/nodes-img.png"/>
+                                                <span>Inicio</span>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/Informacion">
+                                                <img src="https://res.cloudinary.com/hashnode/image/upload/v1450381587/static_imgs/nodes-img.png"/>
+                                                <span>Informacion</span>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/Preguntas">
+                                                <img src="https://res.cloudinary.com/hashnode/image/upload/v1450381587/static_imgs/nodes-img.png"/>
+                                                <span>Preguntas</span>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/Contactenos">
+                                                <img src="https://res.cloudinary.com/hashnode/image/upload/v1450381587/static_imgs/nodes-img.png"/>
+                                                <span>Contactenos</span>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            sdf
+                            <div className="medium-9 large-10 columns" style={{border:'1px solid blue'}}>
+                                {this.props.children}
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
                 <br/>
+<<<<<<< HEAD
                 <Header1/>
                 <MenuNav/>
                 {this.props.children}
             
+=======
+>>>>>>> origin/master
             </div>
+
         );
     }
 });
