@@ -25,6 +25,8 @@ const Preguntas=React.createClass({
         return{
             showRespuesta:false,
             showMostrar:'MOSTRAR'
+            
+
         }
     },
     handleClickMostrar(){

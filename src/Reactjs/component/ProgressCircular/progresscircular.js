@@ -6,9 +6,10 @@ export default class CircularProgress extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+
         };
     }
-    
+
     render() {
         const radius = this.props.radius - this.props.strokeWidth / 2;
         const width = this.props.radius * 2;
@@ -41,11 +42,12 @@ export default class CircularProgress extends React.Component {
                     }} />
                 <text
                     className="CircularProgress-Text"
+                    style={this.props.textPorcentage}
                     x={this.props.radius}
                     y={this.props.radius}
                     dy=".4em"
                     textAnchor="middle">
-                    {`${this.props.percentage}%`}
+                    {`${this.props.percentage}`}
                 </text>
             </svg>
         );
@@ -54,6 +56,6 @@ export default class CircularProgress extends React.Component {
 
 CircularProgress.defaultProps = {
     radius: 50,
-    percentage: 50,
+    percentage:50,
     strokeWidth: 1
 };
