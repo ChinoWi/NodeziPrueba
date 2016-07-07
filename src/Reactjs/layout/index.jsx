@@ -231,15 +231,7 @@ const App=React.createClass({
                     </div>
 
                 </div>
-
                 <br/>
-<<<<<<< HEAD
-                <Header1/>
-                <MenuNav/>
-                {this.props.children}
-            
-=======
->>>>>>> origin/master
             </div>
 
         );
