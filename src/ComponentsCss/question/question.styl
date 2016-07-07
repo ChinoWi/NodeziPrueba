@@ -1,8 +1,14 @@
+.question-content
+	  box-shadow -1px -1px 1px #5F6A70,
+                 2px  2px 2px #5F6A70
+	
+
 .sectionPreguntas
 	background #EEEEEE
-
+	
 .sectionPreguntas .row
-	margin 10px
+	min-width 80%
+	margin-top 3%
 
 .row .card
 	background white
@@ -11,7 +17,6 @@
 	&-item
 		margin 20px
 		&-mostrar
-			color #005995
 			cursor pointer
 		&-imgAdmin
 			text-align center
@@ -30,206 +35,59 @@
 			&-imgAdmin
 				height 70px
 
-.section
-	background white
-	// margin 0 21%
-	// padding 1em 1em	
-	&-usuario
-		padding 2em 0
-		margin-top .5em
-		img
-			border 2px solid white
-	&-UsuarioQuestion
-		position relative
-		right 20%
-		bottom 27px
-		margin 0
-		padding 0
-		padding-bottom 2em
-		border-radius 10px
-		background white
-		box-shadow  0 3px 3px #AE3D3D
-		margin-left .9em
-		border 2px solid #EF4D4E
-	&-UsuarioQuestion:hover
-		border-radius 0
-		border 3px solid #EF4D4E
-		box-shadow 0px 0px 0px white
-		transition border-radius 1s	ease-out, border 1s ease, box-shadow 1s ease-out	    
-		    
-	&-User
-		color #EA1C2B
-		border-bottom .5px solid #EF4D4E
-		margin-left .5em
-		font-weight bold
-		&:before
-			content "<"
-			font-weight bold
-			color #FF4842
-			position relative
-			right 15px
-	&-Question
-		color #FF4847
-		margin-left .5em
-		font-family 'Rokkitt'
-		font-weight normal
-		font-size 1.2em
-	&-answer
-		width 680px
-		margin-left 30%
-		border-radius 10px
-		background #8DD446
-		border 2px solid #4A81B3
-		box-shadow 0 3px 3px #0D5284
-		img
-			border 1px solid white
-			position absolute
-			left 26%
-	&-answer:hover
-		border-radius 0
-		border 3px solid #4A81B3
-		box-shadow 0px 0px 0px white
-		transition border-radius 1s	ease-out, border 1s ease, box-shadow 1s ease-out 
-	&-AdminAnswer
-		color #3B5998
-		font-family 'Rokkitt'
-		font-size 1.2em
-	&-AdminContentAnswer
-		background white
-	&-Admin
-		color #0D5284
-		border-bottom .5px solid #4A81B3
-		margin-left .5em
-		font-weight bold
-		&:before
-			content "<"
-			font-weight bold
-			color #4267B2
-			position relative
-			right 30px
-			bottom 2px
-			font-weight bold
-	
-.Frequently h4
-	font-family 'Candal'
+.separator-question
+	height 10px
+
+
+.example-enter
+	opacity 0
+	transition opacity .5s ease-in
+
+.example-enter.example-enter-active
+	opacity 1
+		
+.example-leave
+	opacity 1
+	transition opacity .5s ease-in
+
+.example-leave.example-leave-active
+	opacity 0
+
+
+
+.article-question:hover
+	background #EEEEEE
+	img
+		transform rotate(360deg)
+
+
+.article-question img
+	transition 1s
+
+
+.question-title
+	color #00BAFF
+	padding-bottom 1em
+	padding-top .5em
+	margin-left .5em
+	text-shadow 2px 2px 2px #AAA
+
+.question
 	color #5F6A70
-	text-decoration underline
 	
-		
-
-//Mobile first
-
-.mobile-user
-	background white
-	padding-top 1em
-	padding-bottom 4em
-	margin 2em 0
-	height 230px
-	position relative
-	font-size 1.2em
-	max-width 100%
-	border-bottom 1px solid #EA1C2B
-.mobile-user:after
-	height 2em
-	width .3em
-	background #3083F7
-	content ''
-	position absolute
-	left 46%
-	bottom -2em
-	z-index 1
-	transform translateX(15px)
-.mobile-ContentUser img
-	border 1px solid #1E88E5
-	width 50px
-	margin-top 40px
-.mobile-usuario
-	color #EA1C2B
-	border-bottom 1px solid #EF4D4E
-	font-family 'Candal'
-	font-size 1.2em
-.mobile-administrador
-	color #0D5284
-	font-family 'Candal'
-	text-align center
-	font-size 1.2em
-	border-bottom 1px solid #4A81B3
-.mobile-question
+.question-option
+	color  #00BAFF
 	font-family 'Rokkitt'	
-	font-size 1.1em
-	color #FF4D47
-.mobile-answer
-	text-align center
-	font-family 'Rokkitt'	
+	font-weight bold
 	font-size 1.2em
-	background white
-	color #3B72AE
-.mobile-admin img
-	border 1px solid #1E88E5
-	width 50px
-	border-radius 50%
-	margin-left 44%
-.linea
-	position absolute
-	width 5px
-	height 20px
-	left 40px
-	margin auto
-	top -20px
-	background red
 	
 
-//Tablet
 
-.table-usuario
-	padding 2em 0
-	margin 4% 5%
-	img
-		border 2px solid green
-.table-UsuarioQuestion
-	position relative
-	bottom 27px
-	margin 0
-	padding 0
-	padding-bottom 2em
-	border-radius 10px
-	background white
-	box-shadow  0 3px 3px #EA1C2B
-	border 1px solid #EA1C2B		
-.table-User
-	color #EA1C2B
-	border-bottom .5px solid #EF4D4E
-	margin-left .5em
-	font-weight bold
-.table-Question
-	color #FF4847
-	margin-left .5em
-	font-family 'Candal'
-	font-weight normal
-
-.table-AdminContentAnswer
-	border 1px solid #4A81B3
-	width 430px
-.table-answer
-	width 430px
-	border-radius 10px
-	margin-left 30%
-	background white
-	box-shadow 0 3px 3px #4A81B3
-	img
-		border 1px solid white
-		position absolute
-		left 23%
-.table-Admin
-	color #0D5287
-	font-weight bold
-	border-bottom .5px solid #4A81B3
-.table-AdminAnswer
-	color #3B7DC1
-		
-
-	
-	
+.answer
+	color #5F6A70
+	font-family 'Rokkitt'
+	font-size 1.1em	
+	font-weight 600
 	
 
 

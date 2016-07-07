@@ -1,5 +1,8 @@
-import React from 'react'
+import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import TestUtils from 'react-addons-test-utils';
 import MediaQuery from 'react-responsive'
+
 
 
 const Respuestas=React.createClass({
@@ -7,13 +10,13 @@ const Respuestas=React.createClass({
         return(
             <div className="row">
                 <div className="medium-3 large-2 columns">
-                    <div className="card-item-alinear">
-                        <img className="card-item-imgAdmin" src="asset/images/admin-item.png" alt=""/>
+                    <div className="card-item-alinear image-answer">
+                        <img className="card-item-imgAdmin"  width="67px" src="asset/images/admin-item.png" alt=""/>
                     </div>
 
                 </div>
                 <div className="medium-9 large-10 columns" >
-                    <h6>{this.props.respuesta}</h6>
+                    <h6 className="answer">{this.props.respuesta}</h6>
                 </div>
             </div>
         );
@@ -25,8 +28,6 @@ const Preguntas=React.createClass({
         return{
             showRespuesta:false,
             showMostrar:'MOSTRAR'
-            
-
         }
     },
     handleClickMostrar(){
@@ -37,18 +38,20 @@ const Preguntas=React.createClass({
     },
     render(){
         return(
-            <div className="card-item">
+            <div className="card-item article-question">
                 <div className="row columns text-left">
                     <div className="medium-2 large-2 columns">
-                        <img src={this.props.imgUrl} alt=""/>
+                        <img src={this.props.imgUrl}/>
                     </div>
                     <div className="medium-10 large-10 columns" >
                         <div style={{borderBottom:'2px solid #EDECE8'}}>
-                            <h5>{this.props.pregunta} </h5>
-                            <h5><small>Presione Mostrar para ver la respuesta</small></h5>
-                            <h6 className="card-item-mostrar" onClick={this.handleClickMostrar}>{this.state.showMostrar ? "MOSTRAR" : "OCULTAR"} </h6>
+                            <h5 className="question">{this.props.pregunta} </h5>
+                            <div className="separator-question"></div>
+                            <h6 className="card-item-mostrar question-option" onClick={this.handleClickMostrar}>{this.state.showMostrar ? "Ver Respuesta" : "Ocultar Respuesta"} </h6>
                         </div>
-                        {this.state.showRespuesta ? <Respuestas respuesta={this.props.respuesta} ></Respuestas> : null}
+                         <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={800} transitionLeaveTimeout={300}>
+                            {this.state.showRespuesta ? <Respuestas  respuesta={this.props.respuesta}></Respuestas> : null}
+                        </ReactCSSTransitionGroup>
                     </div>
                 </div>
             </div>
@@ -88,8 +91,8 @@ const ViewPreguntas= React.createClass({
             <section className="sectionPreguntas">
                 <div className="row">
                     <div className="medium-1 large-2 columns" style={{border:'1px solid #EEEEEE'}}></div>
-                    <div className="medium-10 large-8 columns card">
-                        <h4>Preguntas</h4>
+                    <div className="medium-10 large-8 columns card  question-content">
+                        <h4 className="question-title">Preguntas</h4>
                         {this.state.Datos.map(this.eachItem)}
                     </div>
                     <div className="medium-1 large-2 columns" style={{border:'1px solid #EEEEEE'}}></div>
